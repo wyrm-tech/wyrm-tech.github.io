@@ -21,98 +21,6 @@
         font-family: "Arial", sans-serif;
       }
 
-      .cloud {
-        position: absolute;
-        background: white;
-        border-radius: 50px;
-        opacity: 0.9;
-        animation: float 6s ease-in-out infinite;
-      }
-
-      .cloud:before,
-      .cloud:after {
-        content: "";
-        position: absolute;
-        background: white;
-        border-radius: 50px;
-      }
-
-      .cloud1 {
-        width: 100px;
-        height: 40px;
-        top: 20%;
-        left: 10%;
-        animation-delay: 0s;
-      }
-
-      .cloud1:before {
-        width: 50px;
-        height: 50px;
-        top: -25px;
-        left: 10px;
-      }
-
-      .cloud1:after {
-        width: 60px;
-        height: 20px;
-        top: -10px;
-        right: 10px;
-      }
-
-      .cloud2 {
-        width: 80px;
-        height: 30px;
-        top: 15%;
-        right: 15%;
-        animation-delay: -2s;
-      }
-
-      .cloud2:before {
-        width: 40px;
-        height: 40px;
-        top: -20px;
-        left: 15px;
-      }
-
-      .cloud2:after {
-        width: 50px;
-        height: 15px;
-        top: -8px;
-        right: 15px;
-      }
-
-      .cloud3 {
-        width: 120px;
-        height: 50px;
-        top: 25%;
-        left: 60%;
-        animation-delay: -4s;
-      }
-
-      .cloud3:before {
-        width: 60px;
-        height: 60px;
-        top: -30px;
-        left: 20px;
-      }
-
-      .cloud3:after {
-        width: 70px;
-        height: 25px;
-        top: -12px;
-        right: 20px;
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-
       .logo {
         font-size: 4rem;
         font-weight: bold;
@@ -138,20 +46,10 @@
         .logo {
           font-size: 2.5rem;
         }
-
-        .cloud1,
-        .cloud2,
-        .cloud3 {
-          transform: scale(0.7);
-        }
       }
     </style>
   </head>
   <body>
-    <div class="cloud cloud1"></div>
-    <div class="cloud cloud2"></div>
-    <div class="cloud cloud3"></div>
-
     <div class="dragon-bg">
       <!-- Dragon SVG background -->
       <svg
