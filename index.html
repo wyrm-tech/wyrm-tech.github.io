@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WyrmTech - Electric Innovation</title>
+    <title>WyrmTech</title>
     <style>
       * {
         margin: 0;
@@ -12,499 +12,199 @@
       }
 
       body {
+        height: 100vh;
+        background: linear-gradient(135deg, #87ceeb 0%, #4682b4 50%, #1e90ff 100%);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-family: "Arial", sans-serif;
-        background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #2d1b69 100%);
-        min-height: 100vh;
-        overflow-x: hidden;
-        position: relative;
       }
 
-      /* Animated background particles */
-      .particles {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 1;
-      }
-
-      .particle {
+      .cloud {
         position: absolute;
-        width: 2px;
-        height: 2px;
-        background: #00ffff;
-        border-radius: 50%;
-        animation: float 6s infinite linear;
-        opacity: 0.7;
+        background: white;
+        border-radius: 50px;
+        opacity: 0.9;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .cloud:before,
+      .cloud:after {
+        content: "";
+        position: absolute;
+        background: white;
+        border-radius: 50px;
+      }
+
+      .cloud1 {
+        width: 100px;
+        height: 40px;
+        top: 20%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+
+      .cloud1:before {
+        width: 50px;
+        height: 50px;
+        top: -25px;
+        left: 10px;
+      }
+
+      .cloud1:after {
+        width: 60px;
+        height: 20px;
+        top: -10px;
+        right: 10px;
+      }
+
+      .cloud2 {
+        width: 80px;
+        height: 30px;
+        top: 15%;
+        right: 15%;
+        animation-delay: -2s;
+      }
+
+      .cloud2:before {
+        width: 40px;
+        height: 40px;
+        top: -20px;
+        left: 15px;
+      }
+
+      .cloud2:after {
+        width: 50px;
+        height: 15px;
+        top: -8px;
+        right: 15px;
+      }
+
+      .cloud3 {
+        width: 120px;
+        height: 50px;
+        top: 25%;
+        left: 60%;
+        animation-delay: -4s;
+      }
+
+      .cloud3:before {
+        width: 60px;
+        height: 60px;
+        top: -30px;
+        left: 20px;
+      }
+
+      .cloud3:after {
+        width: 70px;
+        height: 25px;
+        top: -12px;
+        right: 20px;
       }
 
       @keyframes float {
-        0% {
-          transform: translateY(100vh) rotate(0deg);
-          opacity: 0;
-        }
-        10% {
-          opacity: 0.7;
-        }
-        90% {
-          opacity: 0.7;
-        }
-        100% {
-          transform: translateY(-10px) rotate(360deg);
-          opacity: 0;
-        }
-      }
-
-      .container {
-        position: relative;
-        z-index: 10;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        padding: 2rem;
-      }
-
-      .logo-section {
-        text-align: center;
-        margin-bottom: 3rem;
-      }
-
-      .company-name {
-        font-size: 4.5rem;
-        font-weight: bold;
-        background: linear-gradient(45deg, #00ffff, #ff6b35, #00ffff);
-        background-size: 200% 200%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: gradientShift 3s ease-in-out infinite;
-        margin-bottom: 1rem;
-        text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
-      }
-
-      @keyframes gradientShift {
-        0%,
-        100% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-      }
-
-      .dragon-container {
-        position: relative;
-        width: 400px;
-        height: 280px;
-        margin: 2rem auto;
-      }
-
-      .dragon {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        animation: dragonFloat 4s ease-in-out infinite;
-      }
-
-      @keyframes dragonFloat {
-        0%,
-        100% {
-          transform: translateY(0px) rotate(0deg);
-        }
-        50% {
-          transform: translateY(-15px) rotate(1deg);
-        }
-      }
-
-      /* Dragon Head */
-      .dragon-head {
-        position: absolute;
-        top: 40px;
-        right: 50px;
-        width: 80px;
-        height: 70px;
-        background: linear-gradient(135deg, #4a0e4e, #6b1e6b, #8b2f8b);
-        border-radius: 40px 60px 30px 20px;
-        box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
-        z-index: 10;
-      }
-
-      .dragon-snout {
-        position: absolute;
-        top: 35px;
-        right: -25px;
-        width: 40px;
-        height: 25px;
-        background: linear-gradient(135deg, #6b1e6b, #4a0e4e);
-        border-radius: 20px 30px 15px 10px;
-      }
-
-      .dragon-eye {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 12px;
-        height: 12px;
-        background: #00ffff;
-        border-radius: 50%;
-        animation: eyeGlow 2s ease-in-out infinite;
-        z-index: 2;
-      }
-
-      .dragon-eye::before {
-        content: "";
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        width: 8px;
-        height: 8px;
-        background: #ffffff;
-        border-radius: 50%;
-      }
-
-      @keyframes eyeGlow {
-        0%,
-        100% {
-          box-shadow: 0 0 8px #00ffff;
-        }
-        50% {
-          box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
-        }
-      }
-
-      .dragon-horn {
-        position: absolute;
-        top: 5px;
-        right: 35px;
-        width: 8px;
-        height: 25px;
-        background: linear-gradient(to top, #8b2f8b, #00ffff);
-        border-radius: 4px;
-        transform: rotate(-10deg);
-      }
-
-      .dragon-horn:nth-child(4) {
-        right: 25px;
-        transform: rotate(10deg);
-        height: 20px;
-      }
-
-      /* Dragon Neck */
-      .dragon-neck {
-        position: absolute;
-        top: 70px;
-        right: 90px;
-        width: 50px;
-        height: 80px;
-        background: linear-gradient(135deg, #2d1b69, #4a0e4e);
-        border-radius: 25px;
-        transform: rotate(-20deg);
-        box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
-      }
-
-      /* Dragon Body */
-      .dragon-body {
-        position: absolute;
-        top: 100px;
-        left: 120px;
-        width: 140px;
-        height: 80px;
-        background: linear-gradient(45deg, #2d1b69, #4a0e4e, #2d1b69);
-        border-radius: 40px;
-        box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
-        z-index: 5;
-      }
-
-      /* Dragon Wings */
-      .dragon-wing-left {
-        position: absolute;
-        top: 60px;
-        left: 80px;
-        width: 80px;
-        height: 120px;
-        background: linear-gradient(45deg, #1a1a3e, #2d1b69, #4a0e4e);
-        border-radius: 40px 20px 60px 20px;
-        transform-origin: bottom center;
-        animation: wingFlapLeft 2s ease-in-out infinite;
-        z-index: 3;
-      }
-
-      .dragon-wing-right {
-        position: absolute;
-        top: 60px;
-        right: 40px;
-        width: 80px;
-        height: 120px;
-        background: linear-gradient(45deg, #1a1a3e, #2d1b69, #4a0e4e);
-        border-radius: 20px 40px 20px 60px;
-        transform-origin: bottom center;
-        animation: wingFlapRight 2s ease-in-out infinite;
-        z-index: 3;
-      }
-
-      @keyframes wingFlapLeft {
-        0%,
-        100% {
-          transform: rotate(-15deg);
-        }
-        50% {
-          transform: rotate(-35deg);
-        }
-      }
-
-      @keyframes wingFlapRight {
-        0%,
-        100% {
-          transform: rotate(15deg);
-        }
-        50% {
-          transform: rotate(35deg);
-        }
-      }
-
-      /* Dragon Tail */
-      .dragon-tail {
-        position: absolute;
-        top: 120px;
-        left: 20px;
-        width: 120px;
-        height: 30px;
-        background: linear-gradient(45deg, #2d1b69, #1a1a3e);
-        border-radius: 50px;
-        transform: rotate(20deg);
-        animation: tailSway 3s ease-in-out infinite;
-        z-index: 2;
-      }
-
-      .dragon-tail::after {
-        content: "";
-        position: absolute;
-        top: 5px;
-        right: -15px;
-        width: 20px;
-        height: 20px;
-        background: linear-gradient(45deg, #4a0e4e, #6b1e6b);
-        border-radius: 50% 70% 50% 70%;
-        transform: rotate(45deg);
-      }
-
-      @keyframes tailSway {
-        0%,
-        100% {
-          transform: rotate(20deg);
-        }
-        50% {
-          transform: rotate(10deg);
-        }
-      }
-
-      /* Dragon Legs */
-      .dragon-leg {
-        position: absolute;
-        width: 25px;
-        height: 40px;
-        background: linear-gradient(to bottom, #4a0e4e, #2d1b69);
-        border-radius: 12px;
-      }
-
-      .dragon-leg-front {
-        top: 150px;
-        left: 180px;
-        animation: legMove 3s ease-in-out infinite;
-      }
-
-      .dragon-leg-back {
-        top: 150px;
-        left: 140px;
-        animation: legMove 3s ease-in-out infinite 0.5s;
-      }
-
-      @keyframes legMove {
         0%,
         100% {
           transform: translateY(0px);
         }
         50% {
-          transform: translateY(-5px);
+          transform: translateY(-10px);
         }
       }
 
-      /* Lightning Effects */
       .lightning {
         position: absolute;
-        top: 20px;
-        right: -10px;
-        width: 4px;
-        height: 50px;
-        background: linear-gradient(to bottom, #00ffff, #ffffff, #00ffff);
-        animation: lightning 1s ease-in-out infinite;
-        border-radius: 2px;
-        box-shadow: 0 0 15px #00ffff;
+        width: 3px;
+        background: linear-gradient(to bottom, #ffffff, #00bfff, #ffffff);
+        opacity: 0;
+        animation: strike 3s infinite;
+        box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
       }
 
-      .lightning:nth-child(6) {
-        right: 0px;
-        animation-delay: 0.3s;
-        height: 40px;
-        transform: rotate(10deg);
+      .lightning1 {
+        height: 150px;
+        top: 35%;
+        left: 15%;
+        animation-delay: 1s;
+        transform: rotate(15deg);
       }
 
-      .lightning:nth-child(7) {
-        right: -20px;
-        animation-delay: 0.6s;
-        height: 35px;
+      .lightning2 {
+        height: 120px;
+        top: 30%;
+        right: 20%;
+        animation-delay: 2.5s;
         transform: rotate(-10deg);
       }
 
-      @keyframes lightning {
+      .lightning3 {
+        height: 180px;
+        top: 40%;
+        left: 65%;
+        animation-delay: 4s;
+        transform: rotate(8deg);
+      }
+
+      @keyframes strike {
         0%,
-        70%,
+        90%,
         100% {
           opacity: 0;
-          transform: scaleY(0.5);
         }
-        75%,
-        85% {
+        5%,
+        10% {
           opacity: 1;
-          transform: scaleY(1);
         }
       }
 
-      /* Electric Aura */
-      .dragon-aura {
-        position: absolute;
-        top: -20px;
-        left: -20px;
-        right: -20px;
-        bottom: -20px;
-        border: 2px solid rgba(0, 255, 255, 0.3);
-        border-radius: 50%;
-        animation: auraGlow 3s ease-in-out infinite;
-        pointer-events: none;
-      }
-
-      @keyframes auraGlow {
-        0%,
-        100% {
-          box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-          transform: scale(1);
-        }
-        50% {
-          box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
-          transform: scale(1.05);
-        }
-      }
-
-      .tagline {
-        font-size: 1.5rem;
-        color: #ffffff;
+      .logo {
+        font-size: 4rem;
+        font-weight: bold;
+        color: white;
         text-align: center;
-        margin-top: 2rem;
-        opacity: 0.9;
-        animation: fadeInUp 2s ease-out;
+        text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff, 0 0 40px #0080ff, 2px 2px 4px rgba(0, 0, 0, 0.3);
+        animation: electricPulse 2s ease-in-out infinite alternate;
+        letter-spacing: 0.1em;
+        z-index: 10;
+        position: relative;
       }
 
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
+      @keyframes electricPulse {
+        0% {
+          text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff, 0 0 40px #0080ff, 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
-        to {
-          opacity: 0.9;
-          transform: translateY(0);
+        100% {
+          text-shadow: 0 0 20px #ffffff, 0 0 30px #00bfff, 0 0 40px #00bfff, 0 0 50px #0080ff, 0 0 60px #0080ff, 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
       }
 
-      /* Responsive design */
       @media (max-width: 768px) {
-        .company-name {
-          font-size: 3rem;
+        .logo {
+          font-size: 2.5rem;
         }
 
-        .dragon-container {
-          width: 320px;
-          height: 220px;
-          transform: scale(0.8);
+        .cloud1,
+        .cloud2,
+        .cloud3 {
+          transform: scale(0.7);
         }
 
-        .tagline {
-          font-size: 1.2rem;
-          padding: 0 1rem;
+        .lightning {
+          height: 100px;
         }
       }
     </style>
   </head>
   <body>
-    <div class="particles" id="particles"></div>
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
 
-    <div class="container">
-      <div class="logo-section">
-        <h1 class="company-name">WyrmTech</h1>
+    <div class="lightning lightning1"></div>
+    <div class="lightning lightning2"></div>
+    <div class="lightning lightning3"></div>
 
-        <div class="dragon-container">
-          <div class="dragon">
-            <div class="dragon-aura"></div>
-            <div class="dragon-tail"></div>
-            <div class="dragon-leg dragon-leg-back"></div>
-            <div class="dragon-leg dragon-leg-front"></div>
-            <div class="dragon-wing-left"></div>
-            <div class="dragon-wing-right"></div>
-            <div class="dragon-body"></div>
-            <div class="dragon-neck"></div>
-            <div class="dragon-head">
-              <div class="dragon-snout"></div>
-              <div class="dragon-eye"></div>
-              <div class="dragon-horn"></div>
-              <div class="dragon-horn"></div>
-              <div class="lightning"></div>
-              <div class="lightning"></div>
-              <div class="lightning"></div>
-            </div>
-          </div>
-        </div>
-
-        <p class="tagline">Unleashing Electric Innovation</p>
-      </div>
-    </div>
-
-    <script>
-      // Create floating particles
-      function createParticle() {
-        const particle = document.createElement("div");
-        particle.className = "particle";
-        particle.style.left = Math.random() * 100 + "%";
-        particle.style.animationDuration = Math.random() * 3 + 3 + "s";
-        particle.style.animationDelay = Math.random() * 2 + "s";
-        return particle;
-      }
-
-      const particlesContainer = document.getElementById("particles");
-      for (let i = 0; i < 50; i++) {
-        particlesContainer.appendChild(createParticle());
-      }
-
-      // Add mouse interaction to dragon
-      const dragon = document.querySelector(".dragon");
-      const container = document.querySelector(".container");
-
-      container.addEventListener("mousemove", (e) => {
-        const rect = container.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width;
-        const y = (e.clientY - rect.top) / rect.height;
-
-        const rotateX = (y - 0.5) * 10;
-        const rotateY = (x - 0.5) * 10;
-
-        dragon.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-      });
-
-      container.addEventListener("mouseleave", () => {
-        dragon.style.transform = "rotateX(0deg) rotateY(0deg)";
-      });
-    </script>
+    <div class="logo">WyrmTech</div>
   </body>
 </html>
