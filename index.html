@@ -175,7 +175,29 @@
         filter: blur(0.5px) brightness(1.5);
         pointer-events: none;
         z-index: 1;
-        animation: shootingStar 1.2s linear forwards;
+        animation: shootingStar 0.7s linear forwards;
+      }
+
+      .shooting-star.twinkle {
+        animation: shootingStar 0.7s linear forwards, starTwinkle 0.7s ease-in-out;
+      }
+
+      @keyframes starTwinkle {
+        0% {
+          filter: blur(0.5px) brightness(1.5);
+        }
+        20% {
+          filter: blur(0.5px) brightness(2.5);
+        }
+        40% {
+          filter: blur(0.5px) brightness(1.2);
+        }
+        60% {
+          filter: blur(0.5px) brightness(2.2);
+        }
+        100% {
+          filter: blur(0.5px) brightness(1.5);
+        }
       }
       @keyframes shootingStar {
         0% {
@@ -203,7 +225,12 @@
         const starsBg = document.querySelector(".shooting-stars-bg");
         if (!starsBg) return;
         const star = document.createElement("div");
-        star.className = "shooting-star";
+        // 30% chance to twinkle
+        if (Math.random() < 0.3) {
+          star.className = "shooting-star twinkle";
+        } else {
+          star.className = "shooting-star";
+        }
         // Randomize horizontal start position
         const startX = randomBetween(0, 98); // vw
         star.style.left = startX + "vw";
@@ -216,12 +243,16 @@
         starsBg.appendChild(star);
         setTimeout(() => {
           star.remove();
-        }, 1300);
+        }, 800);
       }
-      // Random interval for shooting stars
+      // More stars at once
       function shootingStarsLoop() {
-        createShootingStar();
-        setTimeout(shootingStarsLoop, randomBetween(600, 1800));
+        // 1-3 stars per frame
+        const count = Math.floor(randomBetween(1, 4));
+        for (let i = 0; i < count; i++) {
+          setTimeout(createShootingStar, i * 80);
+        }
+        setTimeout(shootingStarsLoop, randomBetween(250, 700));
       }
       window.addEventListener("DOMContentLoaded", () => {
         shootingStarsLoop();
