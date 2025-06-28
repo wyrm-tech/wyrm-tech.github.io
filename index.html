@@ -256,28 +256,63 @@
       }
       window.addEventListener("DOMContentLoaded", () => {
         shootingStarsLoop();
+        // Lightning flash effect
+        const flashDiv = document.querySelector(".lightning-flash");
+        function lightningFlash() {
+          if (!flashDiv) return;
+          // 1-2 quick flashes
+          const flashes = Math.random() < 0.5 ? 1 : 2;
+          let count = 0;
+          function doFlash() {
+            flashDiv.style.opacity = "1";
+            setTimeout(() => {
+              flashDiv.style.opacity = "0";
+              count++;
+              if (count < flashes) {
+                setTimeout(doFlash, 80 + Math.random() * 60);
+              }
+            }, 60 + Math.random() * 60);
+          }
+          doFlash();
+          // Next flash in 3-7 seconds
+          setTimeout(lightningFlash, 3000 + Math.random() * 4000);
+        }
+        setTimeout(lightningFlash, 2000 + Math.random() * 2000);
       });
     </script>
+    <div class="lightning-flash"></div>
     <a class="vecteezy-credit" href="https://www.vecteezy.com/free-vector/design" target="_blank" rel="noopener">Design Vectors by Vecteezy</a>
   </body>
-    <style>
-      .vecteezy-credit {
-        position: fixed;
-        right: 18px;
-        bottom: 12px;
-        font-size: 0.475rem;
-        color: #b0c4de;
-        background: rgba(0, 0, 0, 0.32);
-        padding: 4px 10px;
-        border-radius: 8px;
-        text-decoration: none;
-        z-index: 100;
-        font-family: inherit;
-        transition: color 0.2s, background 0.2s;
-      }
-      .vecteezy-credit:hover {
-        color: #fff;
-        background: #6699cc;
-      }
-    </style>
+  <style>
+    .lightning-flash {
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: white;
+      opacity: 0;
+      z-index: 9999;
+      transition: opacity 0.15s;
+    }
+    .vecteezy-credit {
+      position: fixed;
+      right: 18px;
+      bottom: 12px;
+      font-size: 0.475rem;
+      color: #b0c4de;
+      background: rgba(0, 0, 0, 0.32);
+      padding: 4px 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      z-index: 100;
+      font-family: inherit;
+      transition: color 0.2s, background 0.2s;
+    }
+    .vecteezy-credit:hover {
+      color: #fff;
+      background: #6699cc;
+    }
+  </style>
 </html>
