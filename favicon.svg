@@ -10,11 +10,22 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs1" />
+       id="defs1">
+      <clipPath id="favicon-clip">
+         <circle cx="1333.3334" cy="1333.3334" r="1333.3334" />
+      </clipPath>
+   </defs>
+  <circle
+     id="favicon-bg"
+     cx="1333.3334"
+     cy="1333.3334"
+     r="1333.3334"
+     style="fill:#ffffff;fill-opacity:1;stroke:none" />
   <g
-     id="g1">
+       id="g1"
+       clip-path="url(#favicon-clip)">
     <g
-       id="group-R5" transform="scale(1.5) translate(-444.44445,-444.44445)">
+         id="group-R5" transform="translate(-200,-250) scale(1.2)">
       <path
          id="path2"
          d="m 10185.4,11781.4 c -12.8,21.1 -25.1,42.5 -36.4,64.4 11.4,-21.8 25.8,-42.2 36.4,-64.4"
