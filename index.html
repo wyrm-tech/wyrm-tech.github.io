@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -27,7 +27,12 @@
         font-weight: bold;
         color: #6699cc;
         text-align: center;
-        text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff, 0 0 40px #0080ff, 2px 2px 4px rgba(0, 0, 0, 0.3);
+        text-shadow:
+          0 0 10px #00bfff,
+          0 0 20px #00bfff,
+          0 0 30px #00bfff,
+          0 0 40px #0080ff,
+          2px 2px 4px rgba(0, 0, 0, 0.3);
         animation: electricPulse 2s ease-in-out infinite alternate;
         letter-spacing: 0.1em;
         z-index: 10;
@@ -37,10 +42,21 @@
 
       @keyframes electricPulse {
         0% {
-          text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff, 0 0 40px #0080ff, 2px 2px 4px rgba(0, 0, 0, 0.3);
+          text-shadow:
+            0 0 10px #00bfff,
+            0 0 20px #00bfff,
+            0 0 30px #00bfff,
+            0 0 40px #0080ff,
+            2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         100% {
-          text-shadow: 0 0 20px #ffffff, 0 0 30px #00bfff, 0 0 40px #00bfff, 0 0 50px #0080ff, 0 0 60px #0080ff, 2px 2px 4px rgba(0, 0, 0, 0.3);
+          text-shadow:
+            0 0 20px #ffffff,
+            0 0 30px #00bfff,
+            0 0 40px #00bfff,
+            0 0 50px #0080ff,
+            0 0 60px #0080ff,
+            2px 2px 4px rgba(0, 0, 0, 0.3);
         }
       }
 
@@ -112,7 +128,9 @@
 
       .dragon-svg {
         opacity: 0;
-        animation: dragonFadeIn 1.5s ease-out 0.2s forwards, dragonGlow 2.5s ease-in-out infinite alternate;
+        animation:
+          dragonFadeIn 1.5s ease-out 0.2s forwards,
+          dragonGlow 2.5s ease-in-out infinite alternate;
       }
 
       @keyframes dragonFadeIn {
@@ -170,6 +188,7 @@
         background: white;
         clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
         animation: fall linear infinite;
+        animation-fill-mode: backwards;
       }
       .star::before {
         content: "";
@@ -271,7 +290,9 @@
       text-decoration: none;
       z-index: 100;
       font-family: inherit;
-      transition: color 0.2s, background 0.2s;
+      transition:
+        color 0.2s,
+        background 0.2s;
     }
     .vecteezy-credit:hover {
       color: #fff;
