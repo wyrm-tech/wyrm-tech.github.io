@@ -65,6 +65,46 @@
           font-size: 1.2rem;
         }
       }
+
+      .eula-link {
+        position: fixed;
+        left: 18px;
+        bottom: 12px;
+        font-size: 0.72rem;
+        color: #d7e8ff;
+        background: rgba(0, 0, 0, 0.35);
+        padding: 6px 12px;
+        border-radius: 999px;
+        text-decoration: none;
+        z-index: 100;
+        font-family: inherit;
+        transition: color 0.2s, background 0.2s;
+      }
+      .eula-link:hover,
+      .eula-link:focus-visible {
+        color: #fff;
+        background: #6699cc;
+      }
+      .vecteezy-credit {
+        position: fixed;
+        right: 18px;
+        bottom: 12px;
+        font-size: 0.475rem;
+        color: #b0c4de;
+        background: rgba(0, 0, 0, 0.32);
+        padding: 4px 10px;
+        border-radius: 8px;
+        text-decoration: none;
+        z-index: 100;
+        font-family: inherit;
+        transition:
+          color 0.2s,
+          background 0.2s;
+      }
+      .vecteezy-credit:hover {
+        color: #fff;
+        background: #6699cc;
+      }
     </style>
   </head>
   <body>
@@ -278,44 +318,4 @@
     <a class="eula-link" href="eula.html">End User License Agreement</a>
     <a class="vecteezy-credit" href="https://www.vecteezy.com/free-vector/design" target="_blank" rel="noopener">Design Vectors by Vecteezy</a>
   </body>
-  <style>
-    .eula-link {
-      position: fixed;
-      left: 18px;
-      bottom: 12px;
-      font-size: 0.72rem;
-      color: #d7e8ff;
-      background: rgba(0, 0, 0, 0.35);
-      padding: 6px 12px;
-      border-radius: 999px;
-      text-decoration: none;
-      z-index: 100;
-      font-family: inherit;
-      transition: color 0.2s, background 0.2s;
-    }
-    .eula-link:hover {
-      color: #fff;
-      background: #6699cc;
-    }
-    .vecteezy-credit {
-      position: fixed;
-      right: 18px;
-      bottom: 12px;
-      font-size: 0.475rem;
-      color: #b0c4de;
-      background: rgba(0, 0, 0, 0.32);
-      padding: 4px 10px;
-      border-radius: 8px;
-      text-decoration: none;
-      z-index: 100;
-      font-family: inherit;
-      transition:
-        color 0.2s,
-        background 0.2s;
-    }
-    .vecteezy-credit:hover {
-      color: #fff;
-      background: #6699cc;
-    }
-  </style>
 </html>
