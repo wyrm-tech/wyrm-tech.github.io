@@ -390,8 +390,12 @@
         color: var(--muted);
       }
 
+      .support-card p + p {
+        margin-top: 14px;
+      }
+
       .support-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         counter-reset: support;
       }
 
@@ -411,6 +415,54 @@
 
       .approach-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .advisory-callout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 28px;
+        margin: 0 0 26px;
+        padding: 26px;
+        border: 1px solid rgba(139, 211, 255, 0.36);
+        border-radius: 24px;
+        background: linear-gradient(135deg, rgba(51, 185, 255, 0.12), rgba(255, 255, 255, 0.035));
+      }
+
+      .advisory-callout .eyebrow {
+        margin-bottom: 10px;
+      }
+
+      .advisory-callout h3 {
+        font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+        line-height: 1.15;
+      }
+
+      .advisory-callout p {
+        margin: 14px 0 0;
+        color: var(--muted);
+      }
+
+      .advisory-details {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .advisory-detail {
+        border-left: 2px solid var(--accent);
+        padding-left: 16px;
+      }
+
+      .advisory-detail h4 {
+        margin: 0;
+        color: #ffffff;
+        font-size: 1rem;
+        line-height: 1.25;
+      }
+
+      .advisory-detail p {
+        margin-top: 8px;
+        font-size: 0.95rem;
       }
 
       .approach-card.featured {
@@ -482,7 +534,8 @@
       @media (max-width: 960px) {
         .hero-grid,
         .two-column,
-        .approach-grid {
+        .approach-grid,
+        .advisory-callout {
           grid-template-columns: 1fr;
         }
 
@@ -514,7 +567,8 @@
 
         .stat-grid,
         .experience-grid,
-        .support-grid {
+        .support-grid,
+        .advisory-details {
           grid-template-columns: 1fr;
         }
       }
@@ -547,7 +601,7 @@
             <aside class="hero-card" aria-label="Engagement focus">
               <h2>Executive advisor, reliability and quality transformation</h2>
               <ul class="signal-list">
-                <li>Fractional CTO / COO-style partnership for Director- and VP-level technology leaders.</li>
+                <li>Executive advisory support spanning Director through Executive level leadership.</li>
                 <li>QA modernization connected to release confidence, service ownership, observability, and SRE.</li>
                 <li>Experience across global fintech, AWS, on-premises data centers, media platforms, and high-traffic digital brands.</li>
               </ul>
@@ -568,8 +622,7 @@
               </p>
               <p>
                 His work spans technology strategy, engineering leadership, operational improvement, reliability, and quality practices across complex, high-visibility platforms. Through WyrmTech,
-                Joseph offers executive advisory support for reliability and quality transformation, with the ability to operate as a fractional CTO / COO partner when broader technology direction or
-                operating discipline is needed.
+                Joseph provides executive advisory support for reliability and quality transformation, bringing broader technology direction and operating discipline when needed.
               </p>
               <p>
                 For an organization building maturity in QA, the starting point is not just better testing. It is improving release confidence, cross-functional accountability, service reliability,
@@ -639,31 +692,58 @@
 
         <section id="support" class="section-card" aria-labelledby="support-title">
           <div class="section-heading">
-            <p class="eyebrow">Proposed consulting approach</p>
-            <h2 id="support-title">A preliminary scope for discovering where WyrmTech can add the most value.</h2>
+            <p class="eyebrow">Targeted Approach for RSI</p>
+            <h2 id="support-title">A QA transformation built around RSI's platform, products, and delivery needs.</h2>
             <p>
-              This is intentionally preliminary. WyrmTech does not yet have enough context on RSI's QA/SRE landscape, platform priorities, organizational constraints, or ownership model to define a
-              final scope. The areas below are starting hypotheses to refine through discovery with leadership.
+              WyrmTech will strengthen QA as a product and engineering capability across the software and services that power RSI's product experiences. The work begins with a focused assessment and
+              becomes a practical automation and tooling playbook that improves release confidence, operational visibility, and accountability. Executive advisory runs through each phase, helping
+              RSI leaders make clear decisions, maintain momentum, and connect quality investment to the reliability and product experience the platform requires. The approach is designed to improve
+              quality of delivery and release confidence while keeping RSI's time-to-market commitments on track.
             </p>
           </div>
+          <aside class="advisory-callout" aria-labelledby="advisory-callout-title">
+            <div>
+              <p class="eyebrow">Executive Advisory</p>
+              <h3 id="advisory-callout-title">A senior leadership partner throughout the transformation.</h3>
+              <p>Executive advisory provides the leadership layer that connects the work across discovery, planning, and execution.</p>
+            </div>
+            <div class="advisory-details">
+              <div class="advisory-detail">
+                <h4>Leadership and operating-model guidance</h4>
+                <p>Set priorities, clarify accountability, evaluate investment and risk tradeoffs, and align QA, engineering, product, and operations around a practical quality operating model.</p>
+              </div>
+              <div class="advisory-detail">
+                <h4>QA and automation governance</h4>
+                <p>Establish a leadership scorecard, decision paths, automation and tooling priorities, and a recurring review cadence that turns quality, release, and reliability signals into action.</p>
+              </div>
+            </div>
+          </aside>
           <div class="support-grid">
             <article class="support-card">
-              <h3>Discover priorities and readiness</h3>
-              <p>Meet with leadership and key teams to understand business goals, technology direction, team responsibilities, delivery risks, and the current maturity of QA and SRE practices.</p>
-            </article>
-            <article class="support-card">
-              <h3>Shape a practical roadmap</h3>
-              <p>Develop a near-term roadmap covering technology and tooling priorities, team structure, hiring needs, decision ownership, and meaningful measures of progress.</p>
-            </article>
-            <article class="support-card">
-              <h3>Provide advisory leadership</h3>
-              <p>Support leadership coaching, decision support, roadmap review, quality strategy, SRE operating model guidance, and recurring progress reviews with stakeholders.</p>
-            </article>
-            <article class="support-card">
-              <h3>Add execution support if needed</h3>
+              <h3>Discovery</h3>
+              <p>Establish a fact base for how quality moves through RSI's platform: critical player journeys, system dependencies, team ownership, release decisions, and production feedback.</p>
               <p>
-                Expand into operating cadence design, execution planning, cross-functional coordination, stakeholder management, and transformation follow-through when the engagement calls for more
-                direct operating support.
+                <strong>Current Understanding and Focus:</strong> Baseline automated coverage, test data and environment readiness, CI/CD quality signals, tooling, defect patterns, and the path from code
+                change to production.
+              </p>
+            </article>
+            <article class="support-card">
+              <h3>Planning and roadmapping</h3>
+              <p>Translate discovery into a prioritized 90-day plan and a target operating model that align QA investment, technology priorities, team responsibilities, and measures of progress.</p>
+              <p>
+                <strong>Current Understanding and Focus:</strong> Define RSI's playbook for which journeys to automate, where tests run in delivery, how test data is managed, who owns the tools, and what
+                release criteria matter.
+              </p>
+            </article>
+            <article class="support-card">
+              <h3>Execution</h3>
+              <p>
+                Work alongside RSI teams to put the plan into operation through execution planning, operating cadences, cross-functional coordination, stakeholder management, and transformation
+                follow-through.
+              </p>
+              <p>
+                <strong>Current Understanding and Focus:</strong> Stand up the prioritized automation backlog, modernize test strategy and tooling, strengthen release gates, connect observability feedback
+                loops, and measure progress through live releases.
               </p>
             </article>
           </div>
@@ -698,17 +778,13 @@
               The goal is to help leadership build a QA and reliability model that improves release confidence, clarifies ownership, and gives stakeholders better visibility into platform risk and
               progress.
             </p>
-            <p>
-              <strong>No trade-off on speed:</strong> these outcomes are delivered alongside existing roadmap commitments, not instead of them — time to market stays intact while reliability and
-              quality improve.
-            </p>
           </div>
         </section>
 
         <section id="next-steps" class="section-card" aria-labelledby="next-steps-title">
           <div class="section-heading">
             <p class="eyebrow">Next steps</p>
-            <h2 id="next-steps-title">Continue the conversation on discovery, scope, and engagement terms.</h2>
+            <h2 id="next-steps-title">Continue the conversation on discovery, scope, and engagement design.</h2>
             <p>Nothing here is final — these are the topics to work through together before defining a formal engagement.</p>
           </div>
           <div class="next-steps-grid">
@@ -721,8 +797,8 @@
               <p>Narrow the preliminary areas outlined above into a defined starting engagement, with deliverables and a timeline that fit RSI's priorities.</p>
             </article>
             <article class="next-steps-card">
-              <h3>Rate &amp; engagement</h3>
-              <p>Align on engagement structure, time commitment, and rate before finalizing a start date.</p>
+              <h3>Engagement design</h3>
+              <p>Align on the role, time commitment, and support model before finalizing a start date.</p>
             </article>
           </div>
         </section>
