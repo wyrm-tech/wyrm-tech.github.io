@@ -318,7 +318,6 @@
         color: var(--muted);
       }
 
-      .stat-grid,
       .experience-grid,
       .support-grid,
       .approach-grid,
@@ -327,32 +326,32 @@
         gap: 16px;
       }
 
-      .stat-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        margin-top: 26px;
-      }
-
-      .stat {
-        border: 1px solid var(--line);
-        border-radius: 22px;
-        padding: 18px;
-        background: rgba(255, 255, 255, 0.035);
-      }
-
-      .stat b {
-        display: block;
-        color: var(--gold);
-        font-size: 1.45rem;
-        line-height: 1.2;
-      }
-
-      .stat span {
-        color: var(--muted);
-        font-size: 0.96rem;
-      }
-
       .experience-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .compliance-card {
+        grid-column: 1 / -1;
+      }
+
+      .sector-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 20px 0 26px;
+      }
+
+      .sector-label {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 12px;
+        border: 1px solid var(--line-strong);
+        border-radius: 999px;
+        background: rgba(139, 211, 255, 0.08);
+        color: var(--accent);
+        font-size: 0.84rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
       }
 
       .experience-card,
@@ -569,7 +568,6 @@
           width: min(100% - 28px, var(--max));
         }
 
-        .stat-grid,
         .experience-grid,
         .support-grid,
         .advisory-details {
@@ -616,17 +614,17 @@
         <section id="summary" class="section-card" aria-labelledby="summary-title">
           <div class="section-heading">
             <p class="eyebrow">Executive summary</p>
-            <h2 id="summary-title">A senior operating partner for technology teams building maturity under real business pressure.</h2>
+            <h2 id="summary-title">Senior technology leadership for teams building maturity under real business pressure.</h2>
           </div>
           <div class="two-column">
             <div>
               <p>
-                Joseph Bulger is a technology leader and consultant who currently supports a major FinTech company, alongside experience guiding technology across major media and digital brands
-                including CNN, NBA, NCAA, Cartoon Network, TNT, TBS, and TCM.
+                WyrmTech brings in-house experience supporting a major FinTech company, alongside technology leadership across major media and digital brands including CNN, NBA, NCAA, Cartoon Network,
+                TNT, TBS, and TCM.
               </p>
               <p>
-                His work spans technology strategy, engineering leadership, operational improvement, reliability, and quality practices across complex, high-visibility platforms. Through WyrmTech,
-                Joseph provides executive advisory support for reliability and quality transformation, bringing broader technology direction and operating discipline when needed.
+                That experience spans technology strategy, engineering leadership, operational improvement, reliability, and quality practices across complex, high-visibility platforms. WyrmTech
+                applies this experience through executive advisory support for reliability and quality transformation, bringing senior technology direction and operating discipline to the engagement.
               </p>
               <p>
                 For an organization building maturity in QA, the starting point is not just better testing. It is improving release confidence, cross-functional accountability, service reliability,
@@ -634,14 +632,9 @@
               </p>
             </div>
             <aside class="callout">
-              <strong>Best-fit role:</strong> a senior partner to existing technology leadership, helping teams connect business priorities with the architecture, engineering practices, organizational
-              structure, and execution rhythms needed to deliver them.
+              <strong>Best-fit support:</strong> a senior partner to existing technology leadership, helping teams connect business priorities with the architecture, engineering practices,
+              organizational structure, and execution rhythms needed to deliver them.
             </aside>
-          </div>
-          <div class="stat-grid" aria-label="Experience highlights">
-            <div class="stat"><b>FinTech</b><span>Current reliability and platform strategy for a major company with global presence.</span></div>
-            <div class="stat"><b>Media scale</b><span>Reliability and delivery work across nationally recognized digital brands.</span></div>
-            <div class="stat"><b>SRE + QA</b><span>Built operating models that move quality from late-stage testing to proactive reliability.</span></div>
           </div>
         </section>
 
@@ -649,7 +642,13 @@
           <div class="section-heading">
             <p class="eyebrow">Relevant experience</p>
             <h2 id="experience-title">Proof points tied to the brands and platforms they impacted.</h2>
-            <p>Experience spans cloud strategy, resilient operations, QA modernization, revenue protection, and delivery at portfolio scale.</p>
+            <p>In-house experience spans cloud strategy, resilient operations, QA modernization, revenue protection, and delivery at portfolio scale.</p>
+          </div>
+          <div class="sector-list" aria-label="Sectors with relevant experience">
+            <span class="sector-label">FinTech</span>
+            <span class="sector-label">Media</span>
+            <span class="sector-label">MedTech</span>
+            <span class="sector-label">HealthTech</span>
           </div>
           <div class="experience-grid">
             <article class="experience-card">
@@ -691,6 +690,11 @@
                 products.
               </p>
             </article>
+            <article class="experience-card compliance-card">
+              <h3>Compliance and regulated delivery</h3>
+              <p class="tagline">PCI · SOC 2 · HIPAA</p>
+              <p>Applies quality, reliability, and operating practices across PCI, SOC 2, and HIPAA contexts, with an emphasis on traceability, evidence, and controlled delivery.</p>
+            </article>
           </div>
         </section>
 
@@ -700,8 +704,8 @@
             <h2 id="support-title">A QA transformation built around RSI's platform, products, and delivery needs.</h2>
             <p>
               WyrmTech will strengthen QA as a product and engineering capability across the software and services that power RSI's product experiences. The work begins with a focused assessment and
-              becomes a practical automation and tooling playbook that improves release confidence, operational visibility, and accountability. Executive advisory runs through each phase, helping
-              RSI leaders make clear decisions, maintain momentum, and connect quality investment to the reliability and product experience the platform requires. The approach is designed to improve
+              becomes a practical automation and tooling playbook that improves release confidence, operational visibility, and accountability. Executive advisory runs through each phase, helping RSI
+              leaders make clear decisions, maintain momentum, and connect quality investment to the reliability and product experience the platform requires. The approach is designed to improve
               quality of delivery and release confidence while keeping RSI's time-to-market commitments on track.
             </p>
           </div>
@@ -718,7 +722,9 @@
               </div>
               <div class="advisory-detail">
                 <h4>QA and automation governance</h4>
-                <p>Establish a leadership scorecard, decision paths, automation and tooling priorities, and a recurring review cadence that turns quality, release, and reliability signals into action.</p>
+                <p>
+                  Establish a leadership scorecard, decision paths, automation and tooling priorities, and a recurring review cadence that turns quality, release, and reliability signals into action.
+                </p>
               </div>
             </div>
           </aside>
@@ -727,16 +733,16 @@
               <h3>Discovery</h3>
               <p>Establish a fact base for how quality moves through RSI's platform: critical player journeys, system dependencies, team ownership, release decisions, and production feedback.</p>
               <p>
-                <strong>Current Understanding and Focus:</strong> Baseline automated coverage, test data and environment readiness, CI/CD quality signals, tooling, defect patterns, and the path from code
-                change to production.
+                <strong>Current Understanding and Focus:</strong> Baseline automated coverage, test data and environment readiness, CI/CD quality signals, tooling, defect patterns, and the path from
+                code change to production.
               </p>
             </article>
             <article class="support-card">
               <h3>Planning and roadmapping</h3>
               <p>Translate discovery into a prioritized 90-day plan and a target operating model that align QA investment, technology priorities, team responsibilities, and measures of progress.</p>
               <p>
-                <strong>Current Understanding and Focus:</strong> Define RSI's playbook for which journeys to automate, where tests run in delivery, how test data is managed, who owns the tools, and what
-                release criteria matter.
+                <strong>Current Understanding and Focus:</strong> Define RSI's playbook for which journeys to automate, where tests run in delivery, how test data is managed, who owns the tools, and
+                what release criteria matter.
               </p>
             </article>
             <article class="support-card">
@@ -746,8 +752,8 @@
                 follow-through.
               </p>
               <p>
-                <strong>Current Understanding and Focus:</strong> Stand up the prioritized automation backlog, modernize test strategy and tooling, strengthen release gates, connect observability feedback
-                loops, and measure progress through live releases.
+                <strong>Current Understanding and Focus:</strong> Stand up the prioritized automation backlog, modernize test strategy and tooling, strengthen release gates, connect observability
+                feedback loops, and measure progress through live releases.
               </p>
             </article>
           </div>
