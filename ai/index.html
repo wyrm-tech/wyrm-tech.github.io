@@ -65,6 +65,23 @@
       .example svg { width: 22px; height: 22px; margin-top: 3px; color: var(--blue); }
       .example h3 { font-size: 17px; line-height: 1.4; font-weight: 500; }
       .example p { margin-top: 6px; color: var(--muted); font-size: 14px; line-height: 1.6; max-width: 300px; }
+      .work { padding-block: 68px; }
+      .work-heading { max-width: 730px; margin-bottom: 36px; }
+      .work-heading .eyebrow { color: var(--blue); margin-bottom: 14px; }
+      .work-heading > p:last-child { color: var(--muted); font-size: 16px; margin-top: 18px; }
+      .work-example { display: grid; grid-template-columns: 140px minmax(0, 1fr) minmax(0, 310px); gap: 32px; padding-block: 32px; border-top: 1px solid var(--line); align-items: start; }
+      .work-category { color: var(--blue); font-size: 14px; font-weight: 500; padding-top: 3px; }
+      .work-copy h3 { font-size: 24px; line-height: 1.25; letter-spacing: -.025em; }
+      .work-copy p { color: var(--muted); font-size: 16px; margin-top: 14px; }
+      .work-result { padding-left: 24px; border-left: 2px solid #426074; }
+      .result-label { color: var(--muted); font-size: 13px; margin-bottom: 5px; }
+      .result-value { display: block; color: var(--blue); font-size: 28px; line-height: 1.2; letter-spacing: -.03em; font-weight: 500; }
+      .result-detail { color: var(--muted); font-size: 14px; margin-top: 6px; }
+      .result-metric + .result-metric { margin-top: 23px; }
+      .product-flow { list-style: none; margin: 0; padding: 0; counter-reset: product-step; }
+      .product-flow li { counter-increment: product-step; display: flex; gap: 12px; align-items: baseline; font-size: 15px; line-height: 1.4; }
+      .product-flow li + li { margin-top: 13px; }
+      .product-flow li::before { content: counter(product-step, decimal-leading-zero); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; color: var(--blue); font-size: 12px; }
       .services { background: #f4f7f9; color: var(--ink); padding-block: 76px 62px; color-scheme: light; }
       .section-top { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 35px; }
       .services .eyebrow { color: #486477; margin-bottom: 14px; }
@@ -127,6 +144,8 @@
         .tier { padding: 23px; }
         .tier-promise { font-size: 19px; }
         .examples { gap: 24px; }
+        .work-example { grid-template-columns: minmax(0, 1fr) minmax(0, 280px); gap: 20px 32px; }
+        .work-category { grid-column: 1 / -1; }
       }
       @media (max-width: 760px) {
         .header { min-height: 80px; }
@@ -144,6 +163,11 @@
         .examples { grid-template-columns: 1fr; gap: 27px; }
         .example p { max-width: 100%; }
         .possibilities-inner { padding-block: 32px; }
+        .work { padding-block: 44px 22px; }
+        .work-heading { margin-bottom: 28px; }
+        .work-example { grid-template-columns: 1fr; gap: 20px; padding-block: 28px; }
+        .work-copy h3 { font-size: 23px; }
+        .work-result { margin-top: 4px; padding-left: 20px; }
         .services { padding-block: 48px 38px; }
         .section-top { display: block; margin-bottom: 28px; }
         .section-intro { margin-top: 18px; max-width: 470px; }
@@ -177,7 +201,7 @@
     <header class="header wrap">
       <a class="brand" href="../index.html" aria-label="WyrmTech home"><img src="../world-dragon-simple.svg" alt="" width="53" height="30" />WyrmTech</a>
       <nav class="nav" aria-label="Page navigation">
-        <a class="nav-detail" href="#possibilities">The possibilities</a>
+        <a class="nav-detail" href="#our-work">Our work</a>
         <a class="nav-detail" href="#engagements">Ways to work together</a>
         <a class="nav-contact" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
       </nav>
@@ -218,6 +242,45 @@
             </article>
           </div>
         </div>
+      </section>
+
+      <section class="work wrap" id="our-work" aria-labelledby="work-title">
+        <div class="work-heading">
+          <p class="eyebrow">From our work</p>
+          <h2 id="work-title">What we’ve helped<br />make possible.</h2>
+          <p>Practical examples of how WyrmTech has put AI to work across finance, technology, and product planning.</p>
+        </div>
+        <article class="work-example" aria-labelledby="finance-example-title">
+          <p class="work-category">Finance</p>
+          <div class="work-copy">
+            <h3 id="finance-example-title">Less time on reports.<br />Faster answers about the business.</h3>
+            <p>We connected AI to QuickBooks Online to generate profit and loss reports, create invoices, and answer questions about financial accounts in everyday language.</p>
+          </div>
+          <div class="work-result" aria-label="Finance results from this work">
+            <div class="result-metric"><p class="result-label">Profit and loss report generation</p><strong class="result-value">Under a minute</strong></div>
+            <div class="result-metric"><p class="result-label">Invoice creation</p><strong class="result-value">A couple of minutes</strong><p class="result-detail">Previously around half an hour.</p></div>
+          </div>
+        </article>
+        <article class="work-example" aria-labelledby="cloud-example-title">
+          <p class="work-category">Technology</p>
+          <div class="work-copy">
+            <h3 id="cloud-example-title">Get finished applications<br />into the cloud sooner.</h3>
+            <p>We streamlined infrastructure rollout so fully developed applications can be deployed to the cloud in less than an hour. This is the step that takes a completed application and makes it available to use.</p>
+          </div>
+          <div class="work-result" aria-label="Cloud deployment results from this work">
+            <p class="result-label">Cloud deployment time</p><strong class="result-value">Under an hour</strong><p class="result-detail">Previously more than a week.</p>
+          </div>
+        </article>
+        <article class="work-example" aria-labelledby="product-example-title">
+          <p class="work-category">Business &amp; product</p>
+          <div class="work-copy">
+            <h3 id="product-example-title">Turn a product vision<br />into a plan a team can build.</h3>
+            <p>We used AI to shape product vision and strategy, turn them into functional requirements that describe what the product needs to do, and then define technical requirements for the development team.</p>
+          </div>
+          <div class="work-result">
+            <ol class="product-flow" aria-label="From product vision to development handoff"><li>Product vision &amp; strategy</li><li>Functional requirements</li><li>Technical requirements</li><li>Development handoff</li></ol>
+          </div>
+        </article>
       </section>
 
       <section class="services" id="engagements" aria-labelledby="services-title">
