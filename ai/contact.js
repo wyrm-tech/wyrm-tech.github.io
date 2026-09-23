@@ -5,6 +5,11 @@
   const endpoint = form.getAttribute('action');
   const isConfigured = /^https:\/\/formsubmit\.co\/[^/?#\s]+$/.test(endpoint || '');
 
+  // Keep local previews on the local thank-you page after FormSubmit responds.
+  if (['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname)) {
+    document.getElementById('inquiry-next').value = new URL('thank-you/', window.location.href).href;
+  }
+
   button.disabled = !isConfigured;
 
   if (!isConfigured) {
