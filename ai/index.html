@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Practical AI advice, hands-on implementation, and ongoing support for business owners and leaders. Find your starting point with WyrmTech." />
+    <meta name="theme-color" content="#081421" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <title>Practical AI for Your Business | WyrmTech</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --ink: #081421;
+        --panel: #102131;
+        --blue: #94d9fa;
+        --text: #f3f7fa;
+        --muted: #b1c0cd;
+        --line: #2b3e4e;
+        --width: 1160px;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+      body { margin: 0; background: var(--ink); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+      h1, h2, h3, p { margin: 0; }
+      h1, h2, h3 { font-weight: 600; line-height: 1.1; }
+      a { color: inherit; text-decoration: none; }
+      button, input, select, textarea { font: inherit; }
+      button, a { -webkit-tap-highlight-color: transparent; }
+      a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+      svg { display: block; }
+      .wrap { width: min(var(--width), calc(100% - 80px)); margin-inline: auto; }
+      .skip-link { position: absolute; top: 12px; left: 12px; padding: 10px 16px; background: var(--blue); color: var(--ink); transform: translateY(-200%); z-index: 5; }
+      .skip-link:focus { transform: translateY(0); }
+      .header { min-height: 96px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--line); }
+      .brand { display: inline-flex; align-items: center; gap: 13px; font-size: 20px; font-weight: 700; letter-spacing: -.5px; }
+      .brand img { width: 53px; height: 30px; object-fit: contain; }
+      .nav { display: flex; align-items: center; gap: 32px; font-size: 14px; }
+      .nav a { padding-block: 10px; }
+      .nav a:hover { color: var(--blue); }
+      .nav .nav-contact { border-bottom: 1px solid var(--blue); }
+      .eyebrow { font-size: 12px; letter-spacing: .15em; line-height: 1.5; font-weight: 600; text-transform: uppercase; }
+      .hero { display: grid; grid-template-columns: 1.25fr 1fr; gap: 65px; align-items: center; padding-block: 88px 82px; }
+      .hero .eyebrow { color: var(--blue); margin-bottom: 25px; }
+      h1 { font-size: clamp(48px, 5.6vw, 72px); letter-spacing: -.055em; }
+      h1 span { display: block; color: var(--blue); }
+      .hero-copy { max-width: 520px; margin-top: 26px; font-size: 18px; line-height: 1.65; color: var(--muted); }
+      .button { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 52px; padding: 13px 23px; border: 1px solid transparent; border-radius: 4px; background: var(--blue); color: var(--ink); font-weight: 600; font-size: 15px; cursor: pointer; transition: background .18s, transform .18s; }
+      .button:hover { background: #b6e6ff; transform: translateY(-2px); }
+      .button:disabled { cursor: not-allowed; opacity: .65; transform: none; }
+      .button svg { width: 18px; height: 18px; flex-shrink: 0; }
+      .hero .button { margin-top: 30px; }
+      .hero-note { margin-top: 16px; color: var(--muted); font-size: 14px; }
+      .path { position: relative; padding: 28px 0 20px 34px; border-left: 1px solid var(--line); }
+      .path-title { font-size: 13px; color: var(--muted); letter-spacing: .03em; margin-bottom: 25px; }
+      .path-item { display: grid; grid-template-columns: 46px 1fr; gap: 18px; align-items: center; padding: 21px 0; border-top: 1px solid var(--line); }
+      .path-number { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 13px; color: var(--blue); }
+      .path-item strong { display: block; font-size: 25px; line-height: 1.25; font-weight: 500; letter-spacing: -.03em; }
+      .path-item p { color: var(--muted); margin-top: 6px; font-size: 15px; }
+      .path-footer { margin-top: 9px; color: var(--blue); font-size: 13px; }
+      .possibilities { background: #0d1d2c; border-block: 1px solid var(--line); }
+      .possibilities-inner { padding-block: 37px 41px; }
+      .possibilities .eyebrow { color: var(--muted); margin-bottom: 22px; }
+      .examples { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+      .example { display: grid; grid-template-columns: 24px 1fr; gap: 15px; align-items: start; }
+      .example svg { width: 22px; height: 22px; margin-top: 3px; color: var(--blue); }
+      .example h3 { font-size: 17px; line-height: 1.4; font-weight: 500; }
+      .example p { margin-top: 6px; color: var(--muted); font-size: 14px; line-height: 1.6; max-width: 300px; }
+      .services { background: #f4f7f9; color: var(--ink); padding-block: 76px 62px; color-scheme: light; }
+      .section-top { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 35px; }
+      .services .eyebrow { color: #486477; margin-bottom: 14px; }
+      h2 { font-size: clamp(32px, 3.5vw, 44px); letter-spacing: -.045em; }
+      .section-intro { max-width: 320px; font-size: 15px; color: #506171; }
+      .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      .tier { display: flex; flex-direction: column; padding: 28px; background: white; border: 1px solid #cbd6df; border-radius: 6px; }
+      .tier-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 27px; }
+      .tier-number { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 13px; color: #506171; }
+      .format { font-size: 12px; font-weight: 600; padding: 4px 9px; border: 1px solid #cbd6df; border-radius: 3px; }
+      .tier h3 { font-size: 32px; letter-spacing: -.035em; }
+      .tier-subtitle { color: #506171; font-size: 14px; margin-top: 7px; }
+      .tier-promise { font-size: 21px; line-height: 1.35; letter-spacing: -.025em; font-weight: 500; margin-top: 28px; }
+      .tier ul { padding: 0; margin: 22px 0 25px; list-style: none; }
+      .tier li { position: relative; padding-left: 22px; font-size: 14px; color: #425565; margin-bottom: 12px; }
+      .tier li::before { content: ""; position: absolute; left: 1px; top: .5em; width: 10px; height: 6px; border-left: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(-45deg); }
+      .outcome { margin-top: auto; border-top: 1px solid #dce3e9; padding-top: 19px; }
+      .outcome-label { display: block; font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #506171; margin-bottom: 5px; }
+      .outcome p { font-size: 15px; font-weight: 500; line-height: 1.5; }
+      .tier-action { background: #102b3f; border-color: #102b3f; color: var(--text); }
+      .tier-action .tier-number, .tier-action .tier-subtitle, .tier-action li { color: #bdd0de; }
+      .tier-action .format { color: #c0e8fc; border-color: #526f83; }
+      .tier-action .outcome { border-color: #426074; }
+      .tier-action .outcome-label { color: var(--blue); }
+      .tier-note { font-size: 14px; text-align: center; color: #506171; margin-top: 25px; }
+      .adviser { display: grid; grid-template-columns: 1fr 1.12fr; align-items: start; gap: 70px; padding-block: 55px; border-bottom: 1px solid var(--line); }
+      .adviser h2 { font-size: 29px; letter-spacing: -.035em; line-height: 1.25; margin-top: 12px; max-width: 380px; }
+      .adviser .eyebrow { color: var(--blue); }
+      .adviser-copy { color: var(--muted); font-size: 16px; }
+      .adviser-copy strong { color: var(--text); font-weight: 500; }
+      .contact { display: grid; grid-template-columns: 1fr 1.12fr; align-items: start; gap: 70px; padding-block: 64px; }
+      .contact h2 { max-width: 650px; }
+      .contact p { margin-top: 17px; color: var(--muted); max-width: 600px; }
+      .contact-copy { padding-top: 14px; }
+      .contact-copy .eyebrow { color: var(--blue); margin: 0 0 18px; }
+      .inquiry-form { min-width: 0; padding: 30px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+      .form-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+      .form-field { min-width: 0; }
+      .form-field-wide { grid-column: 1 / -1; }
+      .form-field label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 500; }
+      .form-field input, .form-field select, .form-field textarea { width: 100%; min-width: 0; min-height: 48px; padding: 11px 12px; color: var(--text); background: var(--ink); border: 1px solid #536778; border-radius: 4px; font-size: 16px; }
+      .form-field textarea { display: block; min-height: 140px; resize: vertical; }
+      .form-field textarea::placeholder { color: var(--muted); opacity: 1; }
+      .inquiry-form .button { width: 100%; justify-content: center; margin-top: 24px; }
+      .inquiry-form .form-note { font-size: 12px; line-height: 1.65; margin-top: 14px; }
+      .form-note a { text-decoration: underline; text-underline-offset: 3px; }
+      .inquiry-form .form-status { margin-top: 18px; font-size: 14px; color: #f3d392; }
+      .form-status[hidden] { display: none; }
+      .footer { border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; padding-block: 25px; color: var(--muted); font-size: 12px; }
+      .footer-links { display: flex; gap: 24px; }
+      .footer a:hover { color: var(--text); }
+      @media (min-width: 1600px) { .hero { padding-block: 102px 96px; } }
+      @media (max-width: 1000px) {
+        .wrap { width: calc(100% - 48px); }
+        .hero { gap: 35px; padding-block: 65px; grid-template-columns: 1.2fr 1fr; }
+        h1 { font-size: 56px; }
+        .path { padding-left: 24px; }
+        .path-item { gap: 10px; grid-template-columns: 32px 1fr; }
+        .path-item strong { font-size: 22px; }
+        .tier { padding: 23px; }
+        .tier-promise { font-size: 19px; }
+        .examples { gap: 24px; }
+      }
+      @media (max-width: 760px) {
+        .header { min-height: 80px; }
+        .nav { gap: 20px; }
+        .nav .nav-detail { display: none; }
+        .hero { grid-template-columns: 1fr; gap: 42px; padding-block: 52px; }
+        h1 { font-size: clamp(43px, 8.7vw, 65px); }
+        .hero-copy { font-size: 17px; max-width: 560px; }
+        .path { padding: 0; border-left: 0; }
+        .path-title { margin-bottom: 12px; }
+        .path-item { padding-block: 17px; grid-template-columns: 34px 1fr; }
+        .path-item strong { font-size: 21px; }
+        .path-item p { font-size: 14px; margin-top: 3px; }
+        .path-footer { margin-top: 8px; }
+        .examples { grid-template-columns: 1fr; gap: 27px; }
+        .example p { max-width: 100%; }
+        .possibilities-inner { padding-block: 32px; }
+        .services { padding-block: 48px 38px; }
+        .section-top { display: block; margin-bottom: 28px; }
+        .section-intro { margin-top: 18px; max-width: 470px; }
+        .tiers { grid-template-columns: 1fr; }
+        .tier { padding: 28px; }
+        .tier-top { margin-bottom: 20px; }
+        .tier-promise { margin-top: 21px; font-size: 22px; }
+        .adviser { grid-template-columns: 1fr; gap: 22px; padding-block: 40px; }
+        .adviser h2 { max-width: 500px; }
+        .contact { grid-template-columns: 1fr; gap: 28px; padding-block: 44px; }
+        .contact-copy { padding-top: 0; }
+        .inquiry-form { padding: 24px; }
+        .form-fields { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 380px) {
+        .wrap { width: calc(100% - 36px); }
+        .brand { font-size: 18px; gap: 9px; }
+        .brand img { width: 42px; }
+        .nav { font-size: 13px; }
+        .tier { padding: 24px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .button { transition: none; }
+        .button:hover { transform: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="header wrap">
+      <a class="brand" href="../index.html" aria-label="WyrmTech home"><img src="../world-dragon-simple.svg" alt="" width="53" height="30" />WyrmTech</a>
+      <nav class="nav" aria-label="Page navigation">
+        <a class="nav-detail" href="#possibilities">The possibilities</a>
+        <a class="nav-detail" href="#engagements">Ways to work together</a>
+        <a class="nav-contact" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero wrap" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">AI advisory for business owners &amp; leaders</p>
+          <h1 id="page-title">Make AI useful.<span>For your business.</span></h1>
+          <p class="hero-copy">Find where AI can help, put it to work, and give your team the confidence to use it. Practical guidance, built around the way you do business.</p>
+          <a class="button" href="#engagements">Find your starting point <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" /></svg></a>
+          <p class="hero-note">You bring the business knowledge. We help with the AI.</p>
+        </div>
+        <div class="path" aria-label="Three ways we help">
+          <p class="path-title">A little direction can change a lot.</p>
+          <div class="path-item"><span class="path-number" aria-hidden="true">01 /</span><div><strong>Know where to start.</strong><p>Find the opportunities worth your attention.</p></div></div>
+          <div class="path-item"><span class="path-number" aria-hidden="true">02 /</span><div><strong>Make it work for you.</strong><p>Turn a real business task into a practical first win.</p></div></div>
+          <div class="path-item"><span class="path-number" aria-hidden="true">03 /</span><div><strong>Keep moving forward.</strong><p>Have an experienced adviser in your corner.</p></div></div>
+          <p class="path-footer">Choose the support that fits where you are.</p>
+        </div>
+      </section>
+
+      <section class="possibilities" id="possibilities" aria-labelledby="possibilities-title">
+        <div class="wrap possibilities-inner">
+          <h2 class="eyebrow" id="possibilities-title">Start with something you do every day</h2>
+          <div class="examples">
+            <article class="example">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 3H5v18h14V8zm0 0v5h5M8 12h8M8 16h6" /></svg>
+              <div><h3>Get to a first draft faster.</h3><p>Turn your ideas and notes into proposals, presentations, or customer updates you can refine.</p></div>
+            </article>
+            <article class="example">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.5 15.5 5 5M8 8h5M8 11h4" /></svg>
+              <div><h3>Find the useful information.</h3><p>Pull key points from long documents and turn meeting notes into clear next steps.</p></div>
+            </article>
+            <article class="example">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 8a8 8 0 0 0-14-1M5 3v4h4M5 16a8 8 0 0 0 14 1m0 4v-4h-4" /></svg>
+              <div><h3>Lighten the routine work.</h3><p>Explore ways to simplify recurring reports, follow-ups, and everyday administration.</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="services" id="engagements" aria-labelledby="services-title">
+        <div class="wrap">
+          <div class="section-top">
+            <div><p class="eyebrow">Three ways to work together</p><h2 id="services-title">The right help.<br />Right where you are.</h2></div>
+            <p class="section-intro">Choose a focused conversation, a practical project, or a continuing relationship.</p>
+          </div>
+          <div class="tiers">
+            <article class="tier" aria-labelledby="clarity-title">
+              <div class="tier-top"><span class="tier-number" aria-hidden="true">01</span><span class="format">Session or workshop</span></div>
+              <h3 id="clarity-title">Clarity</h3>
+              <p class="tier-subtitle">Consultation &amp; training</p>
+              <p class="tier-promise">“Help me understand<br />where to start.”</p>
+              <ul><li>Talk through your goals and everyday work</li><li>Identify useful AI opportunities</li><li>Build confidence with practical training</li></ul>
+              <div class="outcome"><span class="outcome-label">Your takeaway</span><p>A clear plan and the confidence to begin.</p></div>
+            </article>
+            <article class="tier tier-action" aria-labelledby="action-title">
+              <div class="tier-top"><span class="tier-number" aria-hidden="true">02</span><span class="format">Defined project</span></div>
+              <h3 id="action-title">Action</h3>
+              <p class="tier-subtitle">Hands-on implementation</p>
+              <p class="tier-promise">“Help us put AI<br />to work.”</p>
+              <ul><li>Choose a task with a clear business benefit</li><li>Set up and test a practical solution</li><li>Help your team make it part of their work</li></ul>
+              <div class="outcome"><span class="outcome-label">Your takeaway</span><p>A working solution for an agreed business task.</p></div>
+            </article>
+            <article class="tier" aria-labelledby="partnership-title">
+              <div class="tier-top"><span class="tier-number" aria-hidden="true">03</span><span class="format">Monthly relationship</span></div>
+              <h3 id="partnership-title">Partnership</h3>
+              <p class="tier-subtitle">Ongoing AI advisory</p>
+              <p class="tier-promise">“Give us someone<br />we can turn to.”</p>
+              <ul><li>Meet regularly to work through priorities</li><li>Get guidance on tools and decisions</li><li>Review progress and plan what comes next</li></ul>
+              <div class="outcome"><span class="outcome-label">Your takeaway</span><p>A trusted adviser as your business and AI evolve.</p></div>
+            </article>
+          </div>
+          <p class="tier-note">Start with any option. We’ll agree on scope, timing, and cost together.</p>
+        </div>
+      </section>
+
+      <section class="adviser wrap" aria-labelledby="adviser-title">
+        <div><p class="eyebrow">A partner who understands business</p><h2 id="adviser-title">Technology experience.<br />A practical approach.</h2></div>
+        <p class="adviser-copy"><strong>WyrmTech</strong> brings technology leadership experience across financial services and major media brands. We start with your business goals and make the next step clear, useful, and achievable.</p>
+      </section>
+
+      <section class="contact wrap" id="contact" aria-labelledby="contact-title">
+        <div class="contact-copy"><p class="eyebrow">Take the next step</p><h2 id="contact-title">Curious what AI<br />could do for you?</h2><p>Leave your details and WyrmTech will follow up with more information about the right support for your business.</p></div>
+        <!-- FormSubmit emails sales@wyrmtech.com a one-time activation link after the first submission. -->
+        <form class="inquiry-form" id="inquiry-form" action="https://formsubmit.co/sales@wyrmtech.com" method="post" aria-labelledby="contact-title">
+          <input type="hidden" name="_subject" value="WyrmTech AI services — information request" />
+          <input type="hidden" name="_template" value="table" />
+          <div class="form-fields">
+            <div class="form-field"><label for="inquiry-name">Your name</label><input id="inquiry-name" name="name" autocomplete="name" maxlength="120" required /></div>
+            <div class="form-field"><label for="inquiry-email">Email address</label><input id="inquiry-email" name="email" type="email" autocomplete="email" maxlength="254" required /></div>
+            <div class="form-field form-field-wide"><label for="inquiry-interest">I’d like to learn about</label><select id="inquiry-interest" name="interest"><option value="Help choosing an engagement">Not sure yet — help me get started</option><option value="Clarity — consultation and training">Clarity — consultation &amp; training</option><option value="Action — hands-on implementation">Action — hands-on implementation</option><option value="Partnership — ongoing AI advisory">Partnership — ongoing AI advisory</option></select></div>
+            <div class="form-field form-field-wide"><label for="inquiry-comments">Anything else you’d like to share? (optional)</label><textarea id="inquiry-comments" name="comments" rows="4" placeholder="Tell us where you are with AI, what you’d like help with, or anything else we should know."></textarea></div>
+          </div>
+          <button class="button" id="inquiry-submit" type="submit" disabled>Send me more information</button>
+          <p class="form-note">We’ll use your details to respond to your inquiry. <a href="../privacy/">Privacy policy</a></p>
+          <p class="form-status" id="inquiry-status" role="status" hidden></p>
+          <noscript><p class="form-status">Please enable JavaScript to send your inquiry.</p></noscript>
+        </form>
+      </section>
+    </main>
+    <footer class="footer wrap"><span>WyrmTech · Practical AI. Personal guidance.</span><div class="footer-links"><a href="../index.html">Home</a><a href="../privacy/">Privacy</a></div></footer>
+    <script src="contact.js" defer></script>
+  </body>
+</html>
