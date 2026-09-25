@@ -58,7 +58,7 @@
       : includesTools && directShare === 0 ? 'Your part of the 25% pool' : 'Your role allocation';
     document.getElementById('share-summary').textContent = summary;
     document.getElementById('chart-description').textContent =
-      `New and expanded work allocates Sales 25%, Consultancy 25%, Tool Builder pool 25%, and Operations 25%. Renewals use a separate 5% Sales incentive. ${summary}`;
+      `New and expanded work allocates Sales 25%, Consultancy 25%, Tool Builder pool 25%, and WyrmTech 25%. Renewals use a separate 5% Sales incentive. ${summary}`;
   }
 
   inputs.forEach(input => input.addEventListener('change', () => {
