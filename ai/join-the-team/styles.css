@@ -99,15 +99,15 @@
 .product-jump-links a:hover { background: var(--panel); border-color: var(--blue); }
 .product-jump-links span { color: var(--blue); font-size: 12px; }
 .product-offering { margin-top: 48px; --product-accent: var(--sales); }
-.advisory-offering { --product-accent: var(--consultancy); }
-.hands-on-offering { --product-accent: var(--tools); }
+.steward-offering { --product-accent: var(--consultancy); }
+.butler-offering { --product-accent: var(--tools); }
 .product-offering + .product-offering { border-top: 1px solid var(--line); padding-top: 42px; }
 .product-offering-heading { display: grid; grid-template-columns: 1fr 1.2fr; align-items: end; gap: 40px; margin-bottom: 24px; }
 .product-offering-heading .eyebrow { color: var(--product-accent); margin-bottom: 10px; }
 .product-offering-heading h3 { font-size: 30px; letter-spacing: -.025em; }
 .product-offering-heading > p { color: var(--muted); max-width: 540px; }
 .product-tier-grid { display: grid; gap: 20px; }
-.advisory-tiers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.steward-tiers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .product-tier-card { display: flex; flex-direction: column; min-width: 0; background: var(--panel); border: 1px solid var(--line); border-top: 2px solid var(--product-accent); border-radius: 6px; padding: 26px; }
 .product-tier-card h4 { font-size: 21px; font-weight: 500; line-height: 1.3; margin: 0 0 14px; }
 .product-price { font-size: 34px; letter-spacing: -.03em; line-height: 1.2; font-weight: 600; }
@@ -164,7 +164,7 @@
   .product-offering { margin-top: 36px; }
   .product-offering + .product-offering { padding-top: 32px; }
   .product-offering-heading { grid-template-columns: 1fr; gap: 16px; }
-  .advisory-tiers, .project-tier { grid-template-columns: 1fr; }
+  .steward-tiers, .project-tier { grid-template-columns: 1fr; }
   .project-tier { gap: 24px; }
   .project-inclusions { border-left: 0; border-top: 1px solid var(--line); padding: 24px 0 0; }
 }

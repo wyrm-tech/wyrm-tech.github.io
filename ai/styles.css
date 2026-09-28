@@ -471,24 +471,24 @@ h2 {
   font-weight: 500;
   line-height: 1.5;
 }
-.tier-action {
+.tier-steward {
   background: #102b3f;
   border-color: #102b3f;
   color: var(--text);
 }
-.tier-action .tier-number,
-.tier-action .tier-subtitle,
-.tier-action li {
+.tier-steward .tier-number,
+.tier-steward .tier-subtitle,
+.tier-steward li {
   color: #bdd0de;
 }
-.tier-action .format {
+.tier-steward .format {
   color: #c0e8fc;
   border-color: #526f83;
 }
-.tier-action .outcome {
+.tier-steward .outcome {
   border-color: #426074;
 }
-.tier-action .outcome-label {
+.tier-steward .outcome-label {
   color: var(--blue);
 }
 .tier-note {
