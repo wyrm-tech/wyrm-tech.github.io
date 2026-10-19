@@ -384,7 +384,7 @@ h2 {
 }
 .tiers {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 .tier {
@@ -471,6 +471,21 @@ h2 {
   font-weight: 500;
   line-height: 1.5;
 }
+.tier-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  margin-top: 20px;
+  color: #185578;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.tier-link:hover {
+  color: #0b3349;
+}
 .tier-steward {
   background: #102b3f;
   border-color: #102b3f;
@@ -490,6 +505,23 @@ h2 {
 }
 .tier-steward .outcome-label {
   color: var(--blue);
+}
+.tier-steward .tier-link {
+  color: var(--blue);
+}
+.tier-steward .tier-link:hover {
+  color: var(--text);
+}
+.tier-guild {
+  background: #e7f3f9;
+  border-color: #b9dceb;
+}
+.tier-guild .format,
+.tier-guild .outcome {
+  border-color: #a8cfdf;
+}
+.tier-guild .outcome-label {
+  color: #27617e;
 }
 .tier-note {
   font-size: 14px;
@@ -660,6 +692,12 @@ h2 {
   .tier {
     padding: 23px;
   }
+  .tiers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .tier:last-child {
+    grid-column: 1 / -1;
+  }
   .tier-promise {
     font-size: 19px;
   }
@@ -758,6 +796,9 @@ h2 {
   }
   .tiers {
     grid-template-columns: 1fr;
+  }
+  .tier:last-child {
+    grid-column: auto;
   }
   .tier {
     padding: 28px;
