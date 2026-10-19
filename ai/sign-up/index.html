@@ -6,12 +6,12 @@
     <meta name="theme-color" content="#081421" />
     <meta
       name="description"
-      content="Compare WyrmTech Concierge AI's Steward plans and Butler Service, then choose the support that fits your business."
+      content="Compare WyrmTech Concierge AI's Steward plans, Guild team plans, and Butler Service to find the right support for your business."
     />
     <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
     <title>Choose Your Concierge AI Service | WyrmTech</title>
     <link rel="stylesheet" href="../styles.css?v=20260928-concierge" />
-    <link rel="stylesheet" href="styles.css?v=20261016-compare" />
+    <link rel="stylesheet" href="styles.css?v=20261019-guild" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -27,7 +27,7 @@
       <section class="signup-intro" aria-labelledby="page-title">
         <p class="eyebrow">WyrmTech Concierge AI</p>
         <h1 id="page-title">Start with support.<span>Build with confidence.</span></h1>
-        <p class="signup-lead">Choose the support that fits your business: expert guidance as you put AI to work, or a solution built and delivered for you.</p>
+        <p class="signup-lead">Choose the support that fits your business: personal guidance, shared learning for your team, or a solution built and delivered for you.</p>
       </section>
 
       <div class="signup-layout">
@@ -133,6 +133,71 @@
           </div>
         </section>
       </div>
+
+      <section class="signup-guild" aria-labelledby="guild-title">
+        <div class="signup-offering signup-guild-offering">
+          <div class="signup-offering-intro">
+            <p class="eyebrow">Guided team service</p>
+            <h2 id="guild-title">Guild Service</h2>
+            <p class="signup-offering-promise">Learn together. Move forward together.</p>
+            <p class="signup-offering-copy">Bring your team into the conversation. Guild gives groups of five or more a shared place to explore AI, work through business priorities, and build practical skills together.</p>
+          </div>
+
+          <div class="signup-included">
+            <h3>What your team gets</h3>
+            <ul class="signup-benefits">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="8" r="2.5" /><circle cx="17" cy="8" r="2.5" /><path d="M2 20v-2a5 5 0 0 1 10 0v2m0 0v-2a5 5 0 0 1 10 0v2" /></svg>
+                <div>
+                  <h4>Private group consultations</h4>
+                  <p>Work through your team’s goals in a shared session, held annually, quarterly, or monthly according to your plan.</p>
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M7 9h10M7 13h10M7 17h6" /></svg>
+                <div>
+                  <h4>Training that fits your plan</h4>
+                  <p>Select adds shared training on common concepts. Signature adds focused training on specific concepts.</p>
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 18h18M5 15l4-4 3 2 6-7 2 2" /><circle cx="9" cy="11" r="1" /></svg>
+                <div>
+                  <h4>Pricing based on team size</h4>
+                  <p>Start with five people and choose the size that fits. Per-person pricing adjusts as your team grows.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <section class="signup-checkout" aria-labelledby="guild-plan-title">
+          <div class="signup-checkout-heading">
+            <p class="eyebrow">Guild plans &amp; pricing</p>
+            <h2 id="guild-plan-title">Choose a plan for your team.</h2>
+            <p>Choose your team size, starting at five people. Yearly billing is available at checkout.</p>
+          </div>
+          <div class="signup-pricing">
+            <stripe-pricing-table
+              pricing-table-id="prctbl_1USHDGRgmgftUJzdVCJB5wAu"
+              publishable-key="pk_test_51RpqcXRgmgftUJzdB9ejPpEPGSORnfiClphSkxnFRjS0CaZfRBJuj7Dg2LBKQMbTN6WnFbixAt5dsLo6N9y68DiB00ugTQ0IxM"
+            ></stripe-pricing-table>
+            <noscript
+              ><p class="signup-no-script">Please enable JavaScript to view Guild plans and sign up, or <a href="../#contact">contact us for help</a>.</p></noscript
+            >
+          </div>
+          <div class="signup-checkout-footer">
+            <p class="signup-payment-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="5" y="10" width="14" height="11" rx="2" />
+                <path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3" /></svg
+              >Secure checkout powered by Stripe
+            </p>
+            <p class="signup-billing-note">Your subscription renews at the selected billing interval. Review your team size, plan, and payment details at checkout.</p>
+            <a class="signup-text-link" href="../#contact">Need help choosing? Let’s talk <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+      </section>
 
       <aside class="signup-first-conversation" aria-labelledby="first-conversation-title">
         <span class="signup-small-mark" aria-hidden="true">↗</span>

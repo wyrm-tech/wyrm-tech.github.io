@@ -180,6 +180,23 @@
   color: var(--muted);
   font-size: 14px;
 }
+.signup-guild {
+  display: grid;
+  gap: 20px;
+  margin-top: 44px;
+}
+.signup-guild-offering {
+  grid-row: auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: none;
+  gap: 40px;
+}
+.signup-guild-offering .signup-included {
+  padding-top: 0;
+}
+.signup-guild-offering .signup-included::before {
+  display: none;
+}
 .signup-first-conversation {
   display: flex;
   align-items: start;
@@ -246,6 +263,19 @@
     flex-direction: column;
     grid-row: auto;
     padding: 28px;
+  }
+  .signup-guild {
+    margin-top: 34px;
+    gap: 16px;
+  }
+  .signup-guild-offering {
+    gap: 0;
+  }
+  .signup-guild-offering .signup-included {
+    padding-top: 28px;
+  }
+  .signup-guild-offering .signup-included::before {
+    display: block;
   }
   .signup-first-conversation {
     margin-top: 32px;
