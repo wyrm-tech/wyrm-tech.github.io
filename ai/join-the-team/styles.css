@@ -49,6 +49,7 @@
 .sales-options p { margin-top: 7px; }
 .role-detail-note { margin-top: 18px; }
 .product-link { display: inline-block; margin-top: 16px; color: var(--blue); font-size: 14px; text-decoration: underline; text-underline-offset: 4px; }
+.sales-resource-links { display: flex; flex-wrap: wrap; gap: 0 24px; }
 .role-payout { border-top: 1px solid var(--line); margin-top: 24px; padding-top: 20px; }
 .role-payout h3 { color: var(--role-color); }
 .pending-note { color: #d3c6a5 !important; font-size: 14px !important; }
