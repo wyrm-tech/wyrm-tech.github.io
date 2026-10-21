@@ -12,6 +12,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, follow" />
+    <meta name="referrer" content="no-referrer" />
     <meta name="theme-color" content="#081421" />
     <meta name="description" content="Thank you for choosing WyrmTech AI Concierge. Find out what happens after Stripe checkout." />
     <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
@@ -24,13 +25,16 @@
     <header class="header wrap"><a class="brand" href="../../index.html" aria-label="WyrmTech home"><img src="../../world-dragon-simple.svg" alt="" width="53" height="30" />WyrmTech</a></header>
     <main id="main">
       <div class="confirmation-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6" /></svg></div>
-      <p class="eyebrow">Stripe checkout complete</p>
-      <h1>Thanks for choosing<span>AI Concierge.</span></h1>
-      <p class="intro">Thanks for signing up for an AI Advisory or AI Team Program plan. We’re glad to help you put AI to work.</p>
-      <section class="next-step" aria-labelledby="next-title"><h2 id="next-title">What happens next</h2><p>Once Stripe confirms your payment, our team will contact you at the email address you used at checkout to arrange your first consultation or team session and help you get started with your plan.</p></section>
+      <p class="eyebrow" id="order-status">AI Concierge checkout</p>
+      <h1><span class="order-title-lead" id="order-title-lead">Thanks for choosing</span><span id="order-title-accent">AI Concierge.</span></h1>
+      <p class="intro" id="order-intro">If you’ve just finished Stripe checkout, we’re glad to help you put AI to work. Our team will follow up after your payment is confirmed.</p>
+      <p class="checkout-reference" id="checkout-reference" hidden>Stripe checkout reference <code id="checkout-session-id"></code></p>
+      <p class="test-note" id="test-note" hidden>This is a Stripe test checkout. No live payment was collected.</p>
+      <section class="next-step" aria-labelledby="next-title"><h2 id="next-title">What happens next</h2><p id="order-next">After a completed purchase, we’ll contact you at the email address used at checkout to arrange your first consultation or team session.</p></section>
       <a class="button" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 12H5m6-6-6 6 6 6" /></svg>Back to AI Concierge</a>
       <p class="order-help">Questions about your order? <a href="mailto:sales@wyrmtech.com">Email our team</a>.</p>
     </main>
     <footer class="footer wrap"><span>WyrmTech · AI Concierge. At your service.</span><div class="footer-links"><a href="../../index.html">Home</a><a href="../../privacy/">Privacy</a></div></footer>
+    <script src="order-confirmed.js" defer></script>
   </body>
 </html>

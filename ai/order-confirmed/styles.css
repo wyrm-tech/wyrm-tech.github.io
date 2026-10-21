@@ -1,3 +1,35 @@
+.order-title-lead {
+  color: var(--text);
+}
+
+.checkout-reference {
+  max-width: 530px;
+  margin: 25px auto 0;
+  padding: 15px 18px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+  color: var(--muted);
+  font-size: 13px;
+  text-align: left;
+}
+
+.checkout-reference code {
+  display: block;
+  margin-top: 5px;
+  color: var(--text);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+
+.test-note {
+  max-width: 530px;
+  margin: 12px auto 0;
+  color: var(--blue);
+  font-size: 13px;
+}
+
 .order-help {
   margin-top: 24px;
   color: var(--muted);
