@@ -1,0 +1,11 @@
+.order-help {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.order-help a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
