@@ -38,3 +38,49 @@ main{min-width:0}.slide{padding:48px clamp(30px,4.4vw,80px) 22px;min-height:calc
   .discovery-questions h3{font-size:23px}
   .discovery-questions p{font-size:12px}
 }
+
+@media screen {
+  .deck-service-name{margin-top:8px;color:var(--blue);font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+  #steward>.lead,#guild>.lead,#butler .lead{margin-top:14px}
+  #services .slide-bottom,#steward .slide-bottom,#guild .slide-bottom,#butler .slide-bottom{padding-top:6px}
+  #services .service-grid{margin-top:25px}
+  .service-card{padding:20px}
+  .service-symbol{margin-bottom:17px}
+  .service-card h3{font-size:clamp(25px,2.3vw,34px);line-height:1.1;margin:7px 0 4px}
+  .service-brand{color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+  .service-card .service-promise{margin-top:12px;font-size:18px}
+  .service-card .service-promise+p{font-size:13px;margin:10px 0}
+  .service-cost{color:var(--mint);font-size:13px;font-weight:600;margin-bottom:12px}
+  .project-options strong{color:var(--text);font-weight:600}
+}
+@media screen and (min-width:851px) {
+  #steward .plan-grid,#guild .plan-grid{margin-top:22px}
+  #steward .plan,#guild .plan{padding:19px}
+  #steward .plan h3,#guild .plan h3{margin-bottom:12px}
+  #steward .annual-price{min-height:22px}
+  #steward .plan-detail,#guild .plan-detail{margin-top:12px;padding-top:13px}
+  #steward .billing-callout{margin-top:15px;padding:12px 17px}
+  #guild .guild-controls{margin-top:10px}
+  #guild .guild-plans{margin-top:12px}
+  #guild .plan{padding:14px}
+  #guild .pricing-caption{margin-top:9px}
+  #butler .butler-grid{margin-top:12px}
+  #butler .delivery-list li{padding:16px 0}
+  #butler .project-price{margin-top:20px;padding-top:15px}
+  #butler .project-options{margin-top:10px;padding-top:9px;font-size:12px}
+}
+@media screen and (max-width:600px) {
+  #services .service-grid{margin-top:27px}
+  .service-card{padding:25px}
+  .service-card h3{font-size:33px}
+  .service-card .service-promise{font-size:21px}
+}
+@media print {
+  .deck-service-name{color:#356b8b;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+  #services .service-grid{margin-top:24px}
+  .service-card h3{font-size:29px;line-height:1.1;margin:9px 0 4px}
+  .service-brand{color:#4b5c69;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+  .service-card .service-promise{margin-top:13px}
+  .service-card .service-promise+p{margin:12px 0 9px}
+  .service-cost{color:#367263;font-size:11px;font-weight:600;margin-bottom:12px}
+}

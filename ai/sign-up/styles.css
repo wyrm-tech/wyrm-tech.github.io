@@ -22,6 +22,39 @@
   font-size: 18px;
   line-height: 1.7;
 }
+.signup-choices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 30px;
+}
+.signup-choices a {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--blue);
+  border-radius: 5px;
+  background: var(--panel);
+}
+.signup-choices a:hover {
+  border-color: var(--blue);
+}
+.signup-choices strong {
+  font-size: 17px;
+  letter-spacing: -0.02em;
+}
+.signup-choices span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.signup-choices b {
+  margin-top: 12px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 600;
+}
 .signup-service-section {
   display: grid;
   gap: 20px;
@@ -44,8 +77,16 @@
   font-size: clamp(30px, 3vw, 38px);
   line-height: 1.14;
 }
+.signup-service-name {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
 .signup-offering-promise {
-  margin-top: 12px;
+  margin-top: 20px;
   color: var(--blue);
   font-size: 19px;
   font-weight: 500;
@@ -118,10 +159,49 @@
   font-size: 29px;
   line-height: 1.2;
 }
-.signup-checkout-heading > p:last-child {
+.signup-checkout-heading > h2 + p {
   color: var(--muted);
   font-size: 14px;
   margin-top: 9px;
+}
+.signup-plan-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.signup-plan-summary li {
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--ink);
+}
+.signup-plan-summary strong {
+  font-size: 14px;
+}
+.signup-plan-summary span {
+  min-height: 34px;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.signup-plan-summary b {
+  margin-top: 10px;
+  color: var(--blue);
+  font-size: 14px;
+  white-space: nowrap;
+}
+.signup-plan-summary small {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 400;
 }
 .signup-pricing {
   padding: 24px 12px 12px;
@@ -172,6 +252,28 @@
   padding: 20px 16px;
   color: var(--muted);
   font-size: 14px;
+}
+.signup-butler-scope {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  padding: 20px 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+.signup-butler-scope p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.signup-butler-scope strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .signup-butler-action {
   display: flex;
@@ -249,6 +351,16 @@
     font-size: 16px;
     margin-top: 20px;
   }
+  .signup-choices {
+    grid-template-columns: 1fr;
+    margin-top: 24px;
+  }
+  .signup-choices a {
+    padding: 16px 18px;
+  }
+  .signup-choices b {
+    margin-top: 4px;
+  }
   .signup-offering {
     display: flex;
     flex-direction: column;
@@ -267,6 +379,29 @@
     margin-bottom: 25px;
     background: var(--line);
     content: "";
+  }
+  .signup-plan-summary {
+    grid-template-columns: 1fr;
+  }
+  .signup-plan-summary li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2px 12px;
+  }
+  .signup-plan-summary span {
+    min-height: 0;
+  }
+  .signup-plan-summary b {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: center;
+    margin-top: 0;
+    text-align: right;
+  }
+  .signup-butler-scope {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 22px 26px;
   }
   .signup-butler-action {
     flex-direction: column;
@@ -293,5 +428,13 @@
   }
   .signup-offering {
     padding: 22px;
+  }
+  .signup-plan-summary li {
+    display: flex;
+  }
+  .signup-plan-summary b {
+    align-self: flex-start;
+    margin-top: 8px;
+    text-align: left;
   }
 }

@@ -1,17 +1,25 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9FRRSLHYQ3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9FRRSLHYQ3');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#081421" />
     <meta
       name="description"
-      content="Compare WyrmTech's human-led AI Concierge services: Steward plans, Guild team plans, and Butler projects."
+      content="Compare WyrmTech AI Concierge: AI Advisory for owners, an AI Team Program for groups of three or more, and fixed-bid AI Implementation."
     />
     <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
     <title>Choose Your AI Concierge Service | WyrmTech</title>
-    <link rel="stylesheet" href="../styles.css?v=20260928-concierge" />
-    <link rel="stylesheet" href="styles.css?v=20261019-butler" />
+    <link rel="stylesheet" href="../styles.css?v=20261021-offers" />
+    <link rel="stylesheet" href="styles.css?v=20261021-offers" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -26,17 +34,23 @@
     <main class="wrap signup-main" id="main">
       <section class="signup-intro" aria-labelledby="page-title">
         <p class="eyebrow">WyrmTech AI Concierge</p>
-        <h1 id="page-title">Start with support.<span>Build with confidence.</span></h1>
-        <p class="signup-lead">Choose the support that fits your business: personal guidance, shared learning for your team, or a solution built and delivered for you.</p>
+        <h1 id="page-title">Choose how to<br /><span>put AI to work.</span></h1>
+        <p class="signup-lead">Get expert guidance while you do the work, support your team together, or have WyrmTech build an agreed solution. Compare what each service delivers, how often it happens, and what it costs.</p>
+        <nav class="signup-choices" aria-label="Choose your level of AI support">
+          <a href="#steward-title"><strong>AI Advisory</strong><span>Steward Service · You implement</span><b>From $100 / month</b></a>
+          <a href="#guild-title"><strong>AI Team Program</strong><span>Guild Service · Teams of 3+</span><b>From $300 / month for 3</b></a>
+          <a href="#butler-title"><strong>AI Implementation</strong><span>Butler Service · We build</span><b>From $10,000 / project</b></a>
+        </nav>
       </section>
 
       <section class="signup-service-section signup-steward" aria-labelledby="steward-title">
         <div class="signup-offering">
           <div class="signup-offering-intro">
-            <p class="eyebrow">Guided service</p>
-            <h2 id="steward-title">Steward Service</h2>
-            <p class="signup-offering-promise">Guided by us. Built by you.</p>
-            <p class="signup-offering-copy">You lead the work, with experienced guidance along the way. Bring your questions, work through your priorities, and build the confidence to use AI in your day-to-day business.</p>
+            <p class="eyebrow">01 / For business owners</p>
+            <h2 id="steward-title">AI Advisory</h2>
+            <p class="signup-service-name">Steward Service</p>
+            <p class="signup-offering-promise">We guide you. You put it into practice.</p>
+            <p class="signup-offering-copy">For owners who want expert direction while keeping implementation in-house. Each consultation focuses on your priorities and ends with an action plan you can carry out.</p>
           </div>
 
           <div class="signup-included">
@@ -45,22 +59,22 @@
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="3" /><path d="M2 20v-2a6 6 0 0 1 12 0v2M16 7h6m-6 5h5m-5 5h4" /></svg>
                 <div>
-                  <h4>In-depth guidance for your business</h4>
-                  <p>A consultation tailored to your goals, held annually, quarterly, or monthly according to your plan.</p>
+                  <h4>Private consultations and an action plan</h4>
+                  <p>Review your priorities, choose practical next steps, and assess progress annually, quarterly, or monthly according to your plan.</p>
                 </div>
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M8 4v16m4-11h6m-6 4h6" /></svg>
                 <div>
-                  <h4>Curated AI skills and tools</h4>
-                  <p>Access our library of AI skills and tools to help put ideas into practice.</p>
+                  <h4>Tools and guidance to do the work</h4>
+                  <p>Access practical AI tools, templates, and workflows, with guidance on choosing and using them.</p>
                 </div>
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H5l-3 3V11.5A7.5 7.5 0 0 1 9.5 4H17l3-2Z" /></svg>
                 <div>
-                  <h4>Concierge support through Slack</h4>
-                  <p>Message your concierge whenever questions come up, around the clock.</p>
+                  <h4>Slack support between consultations</h4>
+                  <p>Ask implementation questions in Slack and receive a response within 24 hours.</p>
                 </div>
               </li>
             </ul>
@@ -69,9 +83,14 @@
 
         <section class="signup-checkout" aria-labelledby="plan-title">
           <div class="signup-checkout-heading">
-            <p class="eyebrow">Steward plans &amp; pricing</p>
-            <h2 id="plan-title">Choose your Steward plan.</h2>
-            <p>Choose the level of personal guidance that fits your business.</p>
+            <p class="eyebrow">AI Advisory / Steward plans</p>
+            <h2 id="plan-title">Choose your consultation cadence.</h2>
+            <p>Every plan includes the guidance and support above. Yearly billing costs 10 monthly payments, saving two months; your consultation cadence follows the plan.</p>
+            <ul class="signup-plan-summary" aria-label="AI Advisory plan comparison">
+              <li><strong>Essential</strong><span>1 consultation / year</span><b>$100 / month <small>or $1,000 / year</small></b></li>
+              <li><strong>Select</strong><span>1 / quarter + common-concept training</span><b>$300 / month <small>or $3,000 / year</small></b></li>
+              <li><strong>Signature</strong><span>1 / month + focused training</span><b>$1,000 / month <small>or $10,000 / year</small></b></li>
+            </ul>
           </div>
           <div class="signup-pricing">
             <!-- Stripe manages the plan prices and billing intervals. This embed currently uses the user's sandbox configuration. -->
@@ -99,10 +118,11 @@
       <section class="signup-service-section signup-guild" aria-labelledby="guild-title">
         <div class="signup-offering">
           <div class="signup-offering-intro">
-            <p class="eyebrow">Guided team service</p>
-            <h2 id="guild-title">Guild Service</h2>
-            <p class="signup-offering-promise">Learn together. Move forward together.</p>
-            <p class="signup-offering-copy">Bring your team into the conversation. Guild gives groups of three or more a shared place to explore AI, work through business priorities, and build practical skills together.</p>
+            <p class="eyebrow">02 / Teams of 3+</p>
+            <h2 id="guild-title">AI Team Program</h2>
+            <p class="signup-service-name">Guild Service</p>
+            <p class="signup-offering-promise">We work with your team. Your team puts it to use.</p>
+            <p class="signup-offering-copy">For teams that want private group guidance tied to their own work. Your team applies the plan between sessions; Select adds shared training on common concepts, and Signature adds training tailored to your workflows.</p>
           </div>
 
           <div class="signup-included">
@@ -111,22 +131,22 @@
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="8" r="2.5" /><circle cx="17" cy="8" r="2.5" /><path d="M2 20v-2a5 5 0 0 1 10 0v2m0 0v-2a5 5 0 0 1 10 0v2" /></svg>
                 <div>
-                  <h4>Private group consultations</h4>
-                  <p>Work through your team’s goals in a shared session, held annually, quarterly, or monthly according to your plan.</p>
+                  <h4>Private team consultations and an action plan</h4>
+                  <p>Work through team priorities together and leave with next steps, held annually, quarterly, or monthly according to your plan.</p>
                 </div>
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M7 9h10M7 13h10M7 17h6" /></svg>
                 <div>
-                  <h4>Training that fits your plan</h4>
-                  <p>Select adds shared training on common concepts. Signature adds focused training on specific concepts.</p>
+                  <h4>Training in Select and Signature</h4>
+                  <p>Select covers common AI concepts; Signature focuses training on the workflows your team uses.</p>
                 </div>
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 18h18M5 15l4-4 3 2 6-7 2 2" /><circle cx="9" cy="11" r="1" /></svg>
                 <div>
-                  <h4>Pricing based on team size</h4>
-                  <p>Start with three people and choose the size that fits. Per-person pricing adjusts as your team grows.</p>
+                  <h4>Shared tools and support</h4>
+                  <p>Get practical AI tools, templates, and workflows. Ask implementation questions in Slack and receive a response within 24 hours.</p>
                 </div>
               </li>
             </ul>
@@ -135,9 +155,14 @@
 
         <section class="signup-checkout" aria-labelledby="guild-plan-title">
           <div class="signup-checkout-heading">
-            <p class="eyebrow">Guild plans &amp; pricing</p>
-            <h2 id="guild-plan-title">Choose a plan for your team.</h2>
-            <p>Choose your team size, starting at three people. Yearly billing is available at checkout.</p>
+            <p class="eyebrow">AI Team Program / Guild plans</p>
+            <h2 id="guild-plan-title">Choose your team’s cadence and size.</h2>
+            <p>Prices below are for three people. Select your actual team size in the Stripe table; every seat receives the rate for its three-seat size band. Yearly billing costs 10 monthly payments, saving two months.</p>
+            <ul class="signup-plan-summary" aria-label="AI Team Program plans for three people">
+              <li><strong>Essential</strong><span>1 team consultation / year</span><b>$300 / month <small>or $3,000 / year</small></b></li>
+              <li><strong>Select</strong><span>1 / quarter + common-concept training</span><b>$900 / month <small>or $9,000 / year</small></b></li>
+              <li><strong>Signature</strong><span>1 / month + tailored training</span><b>$3,000 / month <small>or $30,000 / year</small></b></li>
+            </ul>
           </div>
           <div class="signup-pricing">
             <stripe-pricing-table
@@ -164,10 +189,11 @@
       <section class="signup-service-section signup-butler" aria-labelledby="butler-title">
         <div class="signup-offering">
           <div class="signup-offering-intro">
-            <p class="eyebrow">Done-for-you service</p>
-            <h2 id="butler-title">Butler Service</h2>
-            <p class="signup-offering-promise">Leave it to us.</p>
-            <p class="signup-offering-copy">Put an agreed project in our hands for a fixed bid, starting at $10,000 per engagement. We’ll take the work from planning through delivery, then help your team use the finished solution.</p>
+            <p class="eyebrow">03 / Fixed-bid project</p>
+            <h2 id="butler-title">AI Implementation</h2>
+            <p class="signup-service-name">Butler Service</p>
+            <p class="signup-offering-promise">We scope it, build it, test it, and hand it over.</p>
+            <p class="signup-offering-copy">For businesses that want WyrmTech to deliver a defined workflow or solution. Paid discovery comes first, quoted before it begins. We then set written deliverables, success criteria, and one fixed build price. Projects start at $10,000 per engagement.</p>
           </div>
 
           <div class="signup-included">
@@ -176,35 +202,40 @@
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" /><path d="m17 17 2 2 3-4" /></svg>
                 <div>
-                  <h4>A project scoped together</h4>
-                  <p>We agree on the scope, deliverables, schedule, and one fixed price before we begin.</p>
+                  <h4>Written scope and fixed price</h4>
+                  <p>Discovery defines the workflow, deliverables, success criteria, schedule, and fixed build price before implementation.</p>
                 </div>
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m8 8-4 4 4 4m8-8 4 4-4 4M14 5l-4 14" /></svg>
                 <div>
-                  <h4>Built and tested for you</h4>
-                  <p>We create the solution and make sure it works for your business.</p>
+                  <h4>Built and tested in your environment</h4>
+                  <p>We design and implement the agreed solution, then test it with your team and systems.</p>
                 </div>
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 5h16v11H4zM8 20h8m-4-4v4M8 9l3 3 5-5" /></svg>
                 <div>
-                  <h4>Training for your team</h4>
-                  <p>We show your team how to use the finished solution.</p>
+                  <h4>Handoff, training, and launch support</h4>
+                  <p>Get documentation and team training, plus 30 business days of post-launch support.</p>
                 </div>
               </li>
             </ul>
           </div>
         </div>
 
+        <div class="signup-butler-scope">
+          <p><strong>Example projects</strong> Lead response automation, an internal knowledge assistant, proposal generation, a customer support workflow, or reporting and operations automation.</p>
+          <p><strong>Scoped separately</strong> Ongoing maintenance, new features, unrelated workflows, and third-party software fees.</p>
+        </div>
+
         <div class="signup-butler-action">
           <div>
-            <p class="eyebrow">Let’s plan the work</p>
-            <h3>Have something you want built?</h3>
-            <p>Tell us what you have in mind. We’ll define the scope, timing, and fixed price together. Engagements start at $10,000.</p>
+            <p class="eyebrow">Start with the workflow</p>
+            <h3>Tell us what work you want to make easier.</h3>
+            <p>We’ll scope the workflow, define the deliverables, and give you one fixed build price before implementation. Paid discovery is quoted before it begins; projects start at $10,000.</p>
           </div>
-          <a class="button" href="../#contact">Discuss your project <span aria-hidden="true">↗</span></a>
+          <a class="button" href="../#contact">Scope a project <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 
@@ -212,7 +243,7 @@
         <span class="signup-small-mark" aria-hidden="true">↗</span>
         <div>
           <h2 id="first-conversation-title">Start with the work you’d like to make easier.</h2>
-          <p>Your first conversation is a chance to share your goals, explore where AI could help, and decide on a practical next step. You don’t need a technical background to begin.</p>
+          <p>Share the workflow, who does it today, and what a better result would look like. We’ll help you choose between guidance, a team program, and a scoped implementation. You don’t need a technical background to begin.</p>
         </div>
       </aside>
 

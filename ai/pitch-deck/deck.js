@@ -120,7 +120,7 @@
   });
   document.getElementById("print-deck").addEventListener("click", () => window.print());
 
-  // Pricing snapshot verified against Stripe on 2026-10-19. Volume tiers apply
+  // Pricing snapshot verified against Stripe on 2026-10-21. Volume tiers apply
   // the selected per-seat rate to every seat. Annual prices are 10× monthly.
   const guildPrices = {
     essential: [100, 95, 90, 85, 80, 75],
