@@ -15,6 +15,7 @@
     const study = calculator.closest(".case-study");
     const preview = study.querySelector("[data-roi-preview]");
     const previewLabel = study.querySelector("[data-roi-preview-label]");
+    const previewUnit = study.querySelector("[data-roi-preview-unit]");
     const previewPeriod = study.querySelector("[data-roi-preview-period]");
     const previewRoi = study.querySelector("[data-roi-preview-roi]");
     const previewRoiValue = study.querySelector("[data-roi-preview-roi-value]");
@@ -38,7 +39,8 @@
       const revenueModel = model === "conversion" || model === "new-leads";
       const assumptionKeys = model === "conversion" ? ["volume", "baseRate", "targetRate", "avgSale", "margin"] : model === "new-leads" ? ["volume", "closeRate", "avgSale", "margin"] : ["volume", "minutes", "rate"];
       previewLabel.textContent = revenueModel ? "Illustrative added revenue" : "Projected time value";
-      previewPeriod.textContent = revenueModel ? " / month before project costs" : " / month before costs";
+      previewUnit.textContent = " / month";
+      previewPeriod.textContent = revenueModel ? "before project costs" : "before costs";
       if (previewRoi) previewRoi.hidden = true;
       outputs.netValue.textContent = "—";
       outputs.roi.textContent = "—";
@@ -48,6 +50,7 @@
           output.textContent = "—";
         });
         preview.textContent = "—";
+        previewUnit.textContent = "";
         previewPeriod.textContent = "";
         equation.textContent = revenueModel ? "Complete the sales assumptions to calculate an estimate." : "Complete the three time-savings fields to calculate an estimate.";
         status.textContent = revenueModel ? "Use valid amounts in the sales assumptions. Rates and margin must be between 0% and 100%." : "Use valid, non-negative amounts in the time-savings fields.";
@@ -99,6 +102,7 @@
         } else {
           previewLabel.textContent = "Projected ROI";
           preview.textContent = "Not defined";
+          previewUnit.textContent = "";
           previewPeriod.textContent = "";
         }
         status.textContent = `ROI needs a total cost greater than $0. ${revenueModel ? "Net contribution" : "Net value"} above uses the costs you entered.`;
@@ -113,6 +117,7 @@
       } else {
         previewLabel.textContent = "Projected ROI";
         preview.textContent = outputs.roi.textContent;
+        previewUnit.textContent = "";
         previewPeriod.textContent = " in year one";
         status.textContent =
           netValue < 0

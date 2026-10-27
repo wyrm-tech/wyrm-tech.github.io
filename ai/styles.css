@@ -382,7 +382,7 @@ h2 {
 }
 .case-study summary .case-summary-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 32px;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 280px) 32px;
   align-items: center;
   gap: 22px;
 }
@@ -412,11 +412,42 @@ h2 {
   line-height: 1.6;
 }
 .case-estimate {
-  margin-top: 10px;
+  min-width: 0;
   color: #185578;
   font-size: 13px;
   font-weight: 500;
   line-height: 1.5;
+  text-align: right;
+}
+.case-estimate > span {
+  display: block;
+}
+.case-estimate > [hidden] {
+  display: none;
+}
+.case-estimate .case-estimate-amount {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-end;
+  column-gap: 7px;
+  margin-block: 4px;
+  font-variant-numeric: tabular-nums;
+}
+.case-estimate-amount strong {
+  min-width: 0;
+  font-size: clamp(32px, 3vw, 42px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+.case-estimate-amount [data-roi-preview-unit] {
+  font-size: 18px;
+  white-space: nowrap;
+}
+.case-estimate [data-roi-preview-roi] {
+  margin-top: 5px;
 }
 .case-toggle {
   position: relative;
@@ -951,6 +982,17 @@ h2 {
     grid-template-columns: minmax(0, 1fr) 28px;
     align-items: start;
     gap: 12px;
+  }
+  .case-estimate {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: end;
+    max-width: 100%;
+    margin-top: 6px;
+  }
+  .case-summary-grid > .case-toggle {
+    grid-column: 2;
+    grid-row: 1;
   }
   .case-toggle {
     width: 28px;
