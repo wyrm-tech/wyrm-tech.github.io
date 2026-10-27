@@ -128,10 +128,6 @@ svg {
   align-items: center;
   padding-block: 88px 82px;
 }
-.hero .eyebrow {
-  color: var(--blue);
-  margin-bottom: 25px;
-}
 h1 {
   font-size: clamp(48px, 5.6vw, 72px);
   letter-spacing: -0.055em;
@@ -187,47 +183,13 @@ h1 span {
   color: var(--muted);
   font-size: 14px;
 }
-.path {
-  position: relative;
-  padding: 28px 0 20px 34px;
-  border-left: 1px solid var(--line);
-}
-.path-title {
-  font-size: 13px;
-  color: var(--muted);
-  letter-spacing: 0.03em;
-  margin-bottom: 25px;
-}
-.path-item {
-  display: grid;
-  grid-template-columns: 46px 1fr;
-  gap: 18px;
-  align-items: center;
-  padding: 21px 0;
-  border-top: 1px solid var(--line);
-}
-.path-number {
-  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: 13px;
-  color: var(--blue);
-}
-.path-item strong {
-  display: block;
-  font-size: 25px;
-  line-height: 1.25;
-  font-weight: 500;
-  letter-spacing: -0.03em;
-}
-.path-item p {
-  color: var(--muted);
-  margin-top: 6px;
-  font-size: 15px;
-}
-.path-footer {
-  margin-top: 9px;
-  color: var(--blue);
-  font-size: 13px;
-}
+
+
+
+
+
+
+
 .possibilities {
   background: #0d1d2c;
   border-block: 1px solid var(--line);
@@ -418,24 +380,11 @@ h2 {
   outline: 3px solid #185578;
   outline-offset: 4px;
 }
-.case-study summary h3 {
+.case-study summary .case-summary-grid {
   display: grid;
-  grid-template-columns: 40px minmax(0, 1fr) 32px;
+  grid-template-columns: minmax(0, 1fr) 32px;
   align-items: center;
   gap: 22px;
-}
-.case-number {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  background: #edf3f7;
-  border: 1px solid #dce5eb;
-  border-radius: 4px;
-  color: #316985;
-  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: 13px;
-  font-weight: 500;
 }
 .case-heading-copy > span {
   display: block;
@@ -914,16 +863,9 @@ h2 {
   h1 {
     font-size: 56px;
   }
-  .path {
-    padding-left: 24px;
-  }
-  .path-item {
-    gap: 10px;
-    grid-template-columns: 32px 1fr;
-  }
-  .path-item strong {
-    font-size: 22px;
-  }
+
+
+
   .examples {
     gap: 24px;
   }
@@ -957,27 +899,12 @@ h2 {
     font-size: 17px;
     max-width: 560px;
   }
-  .path {
-    padding: 0;
-    border-left: 0;
-  }
-  .path-title {
-    margin-bottom: 12px;
-  }
-  .path-item {
-    padding-block: 17px;
-    grid-template-columns: 34px 1fr;
-  }
-  .path-item strong {
-    font-size: 21px;
-  }
-  .path-item p {
-    font-size: 14px;
-    margin-top: 3px;
-  }
-  .path-footer {
-    margin-top: 8px;
-  }
+
+
+
+
+
+
   .examples {
     grid-template-columns: 1fr;
     gap: 27px;
@@ -1020,18 +947,14 @@ h2 {
   .case-study summary {
     padding: 22px 20px;
   }
-  .case-study summary h3 {
-    grid-template-columns: 28px minmax(0, 1fr) 28px;
+  .case-study summary .case-summary-grid {
+    grid-template-columns: minmax(0, 1fr) 28px;
     align-items: start;
     gap: 12px;
   }
-  .case-number,
   .case-toggle {
     width: 28px;
     height: 28px;
-  }
-  .case-number {
-    font-size: 11px;
   }
   .case-toggle::before,
   .case-toggle::after {
@@ -1134,11 +1057,8 @@ h2 {
   .nav {
     font-size: 13px;
   }
-  .case-study summary h3 {
+  .case-study summary .case-summary-grid {
     grid-template-columns: minmax(0, 1fr) 28px;
-  }
-  .case-number {
-    display: none;
   }
 }
 @media (prefers-reduced-motion: reduce) {

@@ -205,7 +205,6 @@
 }
 .signup-pricing {
   padding: 24px 12px 12px;
-  min-height: 350px;
 }
 .signup-pricing stripe-pricing-table {
   display: block;
