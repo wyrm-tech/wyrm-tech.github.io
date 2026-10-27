@@ -17,7 +17,7 @@
     <meta name="theme-color" content="#081421" />
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <title>AI Concierge for Your Business | WyrmTech</title>
-    <link rel="stylesheet" href="styles.css?v=20261027-roi" />
+    <link rel="stylesheet" href="styles.css?v=20261027-revenue" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -171,9 +171,9 @@
               <p class="eyebrow">Small business case studies</p>
               <h2 id="case-studies-title">Less busywork.<br />More room to grow.</h2>
             </div>
-            <p class="case-section-intro">Start with a familiar problem. See how AI could help your business respond, sell, and operate with less work falling on you.</p>
+            <p class="case-section-intro">Start with a familiar problem. See how AI could help your business win more work, reach more customers, and free up time.</p>
           </div>
-          <p class="case-context">Five illustrative scenarios for businesses getting started with AI. Open a case study to explore the workflow and estimate its value using your own numbers.</p>
+          <p class="case-context">Five illustrative scenarios for businesses getting started with AI. Three model possible added sales; two estimate time value. Open a case study and replace the sample assumptions with your own numbers.</p>
 
           <div class="case-list">
             <details class="case-study" id="lead-follow-up" open>
@@ -183,8 +183,9 @@
                   <span class="case-heading-copy">
                     <span class="case-category">Lead follow-up · Home services</span>
                     <span class="case-title">Give every new lead a next step.</span>
-                    <span class="case-preview">For the contractor whose inbox fills up while the team is on the job.</span>
-                    <span class="case-estimate"><span data-roi-preview-label>Projected ROI:</span>: <span data-roi-preview>$300</span> / month</span>
+                    <span class="case-preview">For the contractor whose slow replies let ready-to-buy leads choose someone else.</span>
+                    <span class="case-estimate"><span data-roi-preview-label>Illustrative added revenue</span>: <span data-roi-preview>$3,000</span><span data-roi-preview-period> / month before project costs</span><span data-roi-preview-roi hidden> · Year-one ROI: <span data-roi-preview-roi-value>—</span></span></span>
+                  </span>
                   </span>
                   <span class="case-toggle" aria-hidden="true"></span>
                 </h3>
@@ -198,116 +199,87 @@
                   <div>
                     <h4>A workflow with AI</h4>
                     <p>
-                      AI reads each inquiry, summarizes the job, and drafts a reply asking for missing details. The workflow creates a follow-up task; the owner checks the reply and confirms
-                      availability before sending.
+                      AI sorts each inquiry, drafts a relevant reply asking for missing details, and flags promising jobs for prompt follow-up. The owner checks the reply, confirms availability, and sends it.
                     </p>
                   </div>
                   <div class="case-benefit">
                     <h4>What could improve</h4>
-                    <p><strong>More opportunities to book work.</strong> A clear next step for each lead, less inbox sorting, and fewer inquiries forgotten during a busy day.</p>
+                    <p><strong>More inquiries can become paid jobs.</strong> Prompt, relevant follow-up gives interested prospects a clear path from first message to completed work.</p>
                   </div>
                 </div>
                 <div class="case-pilot">
                   <p><strong>Start small</strong>Try one website inquiry form and one service area.</p>
-                  <p><strong>Measure the change</strong>Time to first reply, unanswered inquiries, and bookings.</p>
+                  <p><strong>Measure the change</strong>Inquiry-to-completed-job rate, average job revenue, and time to first reply.</p>
                 </div>
 
-                <section class="case-roi" data-roi data-unit="inquiries" aria-labelledby="lead-follow-up-roi-title">
+                <section class="case-roi" data-roi data-roi-model="conversion" data-unit="completed jobs" data-source-unit="inquiries" data-sale-unit="completed job" aria-labelledby="lead-follow-up-roi-title">
                   <div class="roi-heading">
                     <div>
                       <p class="roi-kicker">Illustrative projection · USD</p>
-                      <h4 id="lead-follow-up-roi-title">What could this be worth to you?</h4>
+                      <h4 id="lead-follow-up-roi-title">What could faster lead follow-up add to sales?</h4>
                     </div>
                     <button class="roi-reset" type="button" hidden>Reset example</button>
                   </div>
-                  <p class="roi-intro">These sample assumptions are a starting point. Use time saved after reviewing and correcting AI’s work.</p>
+                  <p class="roi-intro">Model the sales impact if a higher share of inquiries becomes completed jobs. The sample rate change is illustrative, not a forecast.</p>
                   <div class="roi-layout">
                     <div class="roi-inputs">
                       <fieldset class="roi-assumptions" disabled>
-                        <legend>1. Adjust the time savings</legend>
-                        <div class="roi-fields roi-fields-three">
+                        <legend>1. Adjust the sales assumptions</legend>
+                        <div class="roi-fields roi-fields-revenue">
                           <div>
                             <label for="lead-follow-up-volume">Inquiries per month</label>
-                            <input id="lead-follow-up-volume" data-roi-input="volume" type="number" min="0" max="1000000" step="1" value="80" inputmode="numeric" />
+                            <input id="lead-follow-up-volume" data-roi-input="volume" type="number" min="0" max="1000000" step="1" value="80" inputmode="decimal" />
                           </div>
                           <div>
-                            <label for="lead-follow-up-minutes">Minutes saved per inquiry</label>
-                            <input id="lead-follow-up-minutes" data-roi-input="minutes" type="number" min="0" max="1440" step="0.1" value="5" inputmode="decimal" />
+                            <label for="lead-follow-up-baseRate">Current inquiry-to-job rate (%)</label>
+                            <input id="lead-follow-up-baseRate" data-roi-input="baseRate" type="number" min="0" max="100" step="0.01" value="20" inputmode="decimal" />
                           </div>
                           <div>
-                            <label for="lead-follow-up-rate">Value of one hour ($)</label>
-                            <input id="lead-follow-up-rate" data-roi-input="rate" type="number" min="0" max="100000" step="0.01" value="45" inputmode="decimal" />
+                            <label for="lead-follow-up-targetRate">Possible inquiry-to-job rate (%)</label>
+                            <input id="lead-follow-up-targetRate" data-roi-input="targetRate" type="number" min="0" max="100" step="0.01" value="25" inputmode="decimal" />
+                          </div>
+                          <div>
+                            <label for="lead-follow-up-avgSale">Average revenue per completed job ($)</label>
+                            <input id="lead-follow-up-avgSale" data-roi-input="avgSale" type="number" min="0" max="1000000000" step="0.01" value="750" inputmode="decimal" />
+                          </div>
+                          <div>
+                            <label for="lead-follow-up-margin">Gross margin on added sales (%)</label>
+                            <input id="lead-follow-up-margin" data-roi-input="margin" type="number" min="0" max="100" step="0.01" value="30" inputmode="decimal" />
                           </div>
                         </div>
-                        <p class="roi-field-note">Use the value of the owner’s time or the employee’s total hourly cost.</p>
+                        <p class="roi-field-note">Use your actual conversion rates, sale value, and margin when available. Gross margin is the share of sales left after direct delivery costs.</p>
                       </fieldset>
                       <fieldset class="roi-costs" disabled>
                         <legend>2. Add your expected costs</legend>
                         <div class="roi-fields">
                           <div>
                             <label for="lead-follow-up-monthly-cost">Ongoing cost / month ($)</label>
-                            <input
-                              id="lead-follow-up-monthly-cost"
-                              data-roi-input="monthlyCost"
-                              type="number"
-                              min="0"
-                              max="1000000000"
-                              step="0.01"
-                              placeholder="Enter your estimate"
-                              inputmode="decimal"
-                              aria-describedby="lead-follow-up-cost-note"
-                            />
+                            <input id="lead-follow-up-monthly-cost" data-roi-input="monthlyCost" type="number" min="0" max="1000000000" step="0.01" placeholder="Enter your estimate" inputmode="decimal" aria-describedby="lead-follow-up-cost-note" />
                           </div>
                           <div>
                             <label for="lead-follow-up-setup-cost">One-time setup cost ($)</label>
-                            <input
-                              id="lead-follow-up-setup-cost"
-                              data-roi-input="setupCost"
-                              type="number"
-                              min="0"
-                              max="1000000000"
-                              step="0.01"
-                              placeholder="Enter your estimate"
-                              inputmode="decimal"
-                              aria-describedby="lead-follow-up-cost-note"
-                            />
+                            <input id="lead-follow-up-setup-cost" data-roi-input="setupCost" type="number" min="0" max="1000000000" step="0.01" placeholder="Enter your estimate" inputmode="decimal" aria-describedby="lead-follow-up-cost-note" />
                           </div>
                         </div>
-                        <p class="roi-field-note" id="lead-follow-up-cost-note">
-                          Include service and software fees, maintenance, and setup or training time. Enter 0 for a cost you do not expect. <a href="sign-up/">View service pricing ↗</a>
-                        </p>
+                        <p class="roi-field-note" id="lead-follow-up-cost-note">Include service, software, and other project costs. Enter 0 for a cost you do not expect. <a href="sign-up/">View service pricing ↗</a></p>
                       </fieldset>
                     </div>
                     <div class="roi-results" aria-live="polite" aria-atomic="true">
-                      <p class="roi-result-label">Potential monthly time value</p>
-                      <strong class="roi-monthly-value" data-roi-output="monthlyValue">$300</strong>
-                      <p class="roi-time"><span data-roi-output="hours">6.7</span> hours freed / month</p>
+                      <p class="roi-result-label">Projected monthly revenue change</p>
+                      <strong class="roi-monthly-value" data-roi-output="monthlyRevenue">$3,000</strong>
+                      <p class="roi-time"><span data-roi-output="salesCount">4</span> <span data-roi-sales-description>additional completed jobs</span> / month on average</p>
                       <dl class="roi-totals">
-                        <div>
-                          <dt>Annual time value, before costs</dt>
-                          <dd data-roi-output="annualValue">$3,600</dd>
-                        </div>
-                        <div>
-                          <dt>Year-one net value</dt>
-                          <dd data-roi-output="netValue">—</dd>
-                        </div>
-                        <div>
-                          <dt>Year-one ROI</dt>
-                          <dd data-roi-output="roi">—</dd>
-                        </div>
+                        <div><dt>Annual revenue change</dt><dd data-roi-output="annualRevenue">$36,000</dd></div>
+                        <div><dt>Annual gross profit change, before project costs</dt><dd data-roi-output="annualProfit">$10,800</dd></div>
+                        <div><dt>Year-one net contribution</dt><dd data-roi-output="netValue">—</dd></div>
+                        <div><dt>Year-one ROI</dt><dd data-roi-output="roi">—</dd></div>
                       </dl>
-                      <p class="roi-status" data-roi-status>Enter both costs to see net value and ROI.</p>
+                      <p class="roi-status" data-roi-status>Enter both costs to see net contribution and ROI.</p>
                     </div>
                   </div>
-                  <p class="roi-equation" data-roi-equation>80 inquiries × 5 minutes ÷ 60 × $45 per hour = $300 / month in time value.</p>
-                  <p class="roi-caveat">
-                    Time value represents capacity freed for other work. Cash savings depend on reducing actual spending. These examples assume the same monthly benefit for 12 months; actual results
-                    depend on adoption and your workflow.
-                  </p>
-                  <p class="roi-method">
-                    Year-one net value = annual time value − (12 × ongoing monthly cost + setup cost). ROI = net value ÷ those total costs × 100. Evaluate each workflow separately; count shared time
-                    savings and costs once.
-                  </p>
+                  <p class="roi-equation" data-roi-equation>80 inquiries × (25% − 20%) × $750 per completed job = $3,000 / month in added revenue.</p>
+                  <p class="roi-caveat">A 5 percentage point higher close rate means about 4 more completed jobs per month in this example. Count completed, paid work; avoid counting inquiries or bookings that do not turn into sales. Actual results depend on demand, execution, and your sales process. The annual figures assume the same monthly change for 12 months.</p>
+                  <p class="roi-method">Gross profit change = revenue change × gross margin. Year-one net contribution = annual gross profit change − (12 × ongoing monthly cost + setup cost). ROI = net contribution ÷ those total costs × 100. The model assumes capacity for added sales without changing other overhead. Count shared costs once if you combine workflows.</p>
                   <noscript><p class="roi-field-note">Enable JavaScript to adjust this example and calculate ROI with your own costs.</p></noscript>
                 </section>
               </div>
@@ -320,8 +292,9 @@
                   <span class="case-heading-copy">
                     <span class="case-category">Proposals &amp; estimates · Professional services</span>
                     <span class="case-title">Turn a good sales call into a proposal.</span>
-                    <span class="case-preview">For the small agency that spends its evenings rewriting the same documents.</span>
-                    <span class="case-estimate"><span data-roi-preview-label>Projected ROI:</span>: <span data-roi-preview>$720</span> / month</span>
+                    <span class="case-preview">For the small agency that loses warm prospects while proposals sit unfinished.</span>
+                    <span class="case-estimate"><span data-roi-preview-label>Illustrative added revenue</span>: <span data-roi-preview>$3,000</span><span data-roi-preview-period> / month before project costs</span><span data-roi-preview-roi hidden> · Year-one ROI: <span data-roi-preview-roi-value>—</span></span></span>
+                  </span>
                   </span>
                   <span class="case-toggle" aria-hidden="true"></span>
                 </h3>
@@ -341,110 +314,82 @@
                   </div>
                   <div class="case-benefit">
                     <h4>What could improve</h4>
-                    <p><strong>Less writing between the conversation and the sale.</strong> The team starts with a relevant draft and spends its time refining the offer.</p>
+                    <p><strong>More proposals can turn into signed projects.</strong> A prompt, tailored offer keeps momentum after the sales call and makes the next step clear.</p>
                   </div>
                 </div>
                 <div class="case-pilot">
                   <p><strong>Start small</strong>Use one repeatable service package and an approved template.</p>
-                  <p><strong>Measure the change</strong>Drafting time, corrections needed, and time to send.</p>
+                  <p><strong>Measure the change</strong>Proposal win rate, average signed project value, and time from call to proposal.</p>
                 </div>
 
-                <section class="case-roi" data-roi data-unit="proposals" aria-labelledby="faster-proposals-roi-title">
+                <section class="case-roi" data-roi data-roi-model="conversion" data-unit="won projects" data-source-unit="proposals" data-sale-unit="won project" aria-labelledby="faster-proposals-roi-title">
                   <div class="roi-heading">
                     <div>
                       <p class="roi-kicker">Illustrative projection · USD</p>
-                      <h4 id="faster-proposals-roi-title">What could this be worth to you?</h4>
+                      <h4 id="faster-proposals-roi-title">What could more accepted proposals add to sales?</h4>
                     </div>
                     <button class="roi-reset" type="button" hidden>Reset example</button>
                   </div>
-                  <p class="roi-intro">These sample assumptions are a starting point. Use time saved after reviewing and correcting AI’s work.</p>
+                  <p class="roi-intro">Model the sales impact if timely, relevant proposals improve your win rate. The sample rate change is illustrative, not a forecast.</p>
                   <div class="roi-layout">
                     <div class="roi-inputs">
                       <fieldset class="roi-assumptions" disabled>
-                        <legend>1. Adjust the time savings</legend>
-                        <div class="roi-fields roi-fields-three">
+                        <legend>1. Adjust the sales assumptions</legend>
+                        <div class="roi-fields roi-fields-revenue">
                           <div>
-                            <label for="faster-proposals-volume">Proposals per month</label>
-                            <input id="faster-proposals-volume" data-roi-input="volume" type="number" min="0" max="1000000" step="1" value="12" inputmode="numeric" />
+                            <label for="faster-proposals-volume">Proposals sent per month</label>
+                            <input id="faster-proposals-volume" data-roi-input="volume" type="number" min="0" max="1000000" step="1" value="12" inputmode="decimal" />
                           </div>
                           <div>
-                            <label for="faster-proposals-minutes">Minutes saved per proposal</label>
-                            <input id="faster-proposals-minutes" data-roi-input="minutes" type="number" min="0" max="1440" step="0.1" value="60" inputmode="decimal" />
+                            <label for="faster-proposals-baseRate">Current proposal win rate (%)</label>
+                            <input id="faster-proposals-baseRate" data-roi-input="baseRate" type="number" min="0" max="100" step="0.01" value="20" inputmode="decimal" />
                           </div>
                           <div>
-                            <label for="faster-proposals-rate">Value of one hour ($)</label>
-                            <input id="faster-proposals-rate" data-roi-input="rate" type="number" min="0" max="100000" step="0.01" value="60" inputmode="decimal" />
+                            <label for="faster-proposals-targetRate">Possible proposal win rate (%)</label>
+                            <input id="faster-proposals-targetRate" data-roi-input="targetRate" type="number" min="0" max="100" step="0.01" value="30" inputmode="decimal" />
+                          </div>
+                          <div>
+                            <label for="faster-proposals-avgSale">Average revenue per won project ($)</label>
+                            <input id="faster-proposals-avgSale" data-roi-input="avgSale" type="number" min="0" max="1000000000" step="0.01" value="2500" inputmode="decimal" />
+                          </div>
+                          <div>
+                            <label for="faster-proposals-margin">Gross margin on added sales (%)</label>
+                            <input id="faster-proposals-margin" data-roi-input="margin" type="number" min="0" max="100" step="0.01" value="40" inputmode="decimal" />
                           </div>
                         </div>
-                        <p class="roi-field-note">Use the value of the owner’s time or the employee’s total hourly cost.</p>
+                        <p class="roi-field-note">Use your actual conversion rates, sale value, and margin when available. Gross margin is the share of sales left after direct delivery costs.</p>
                       </fieldset>
                       <fieldset class="roi-costs" disabled>
                         <legend>2. Add your expected costs</legend>
                         <div class="roi-fields">
                           <div>
                             <label for="faster-proposals-monthly-cost">Ongoing cost / month ($)</label>
-                            <input
-                              id="faster-proposals-monthly-cost"
-                              data-roi-input="monthlyCost"
-                              type="number"
-                              min="0"
-                              max="1000000000"
-                              step="0.01"
-                              placeholder="Enter your estimate"
-                              inputmode="decimal"
-                              aria-describedby="faster-proposals-cost-note"
-                            />
+                            <input id="faster-proposals-monthly-cost" data-roi-input="monthlyCost" type="number" min="0" max="1000000000" step="0.01" placeholder="Enter your estimate" inputmode="decimal" aria-describedby="faster-proposals-cost-note" />
                           </div>
                           <div>
                             <label for="faster-proposals-setup-cost">One-time setup cost ($)</label>
-                            <input
-                              id="faster-proposals-setup-cost"
-                              data-roi-input="setupCost"
-                              type="number"
-                              min="0"
-                              max="1000000000"
-                              step="0.01"
-                              placeholder="Enter your estimate"
-                              inputmode="decimal"
-                              aria-describedby="faster-proposals-cost-note"
-                            />
+                            <input id="faster-proposals-setup-cost" data-roi-input="setupCost" type="number" min="0" max="1000000000" step="0.01" placeholder="Enter your estimate" inputmode="decimal" aria-describedby="faster-proposals-cost-note" />
                           </div>
                         </div>
-                        <p class="roi-field-note" id="faster-proposals-cost-note">
-                          Include service and software fees, maintenance, and setup or training time. Enter 0 for a cost you do not expect. <a href="sign-up/">View service pricing ↗</a>
-                        </p>
+                        <p class="roi-field-note" id="faster-proposals-cost-note">Include service, software, and other project costs. Enter 0 for a cost you do not expect. <a href="sign-up/">View service pricing ↗</a></p>
                       </fieldset>
                     </div>
                     <div class="roi-results" aria-live="polite" aria-atomic="true">
-                      <p class="roi-result-label">Potential monthly time value</p>
-                      <strong class="roi-monthly-value" data-roi-output="monthlyValue">$720</strong>
-                      <p class="roi-time"><span data-roi-output="hours">12</span> hours freed / month</p>
+                      <p class="roi-result-label">Projected monthly revenue change</p>
+                      <strong class="roi-monthly-value" data-roi-output="monthlyRevenue">$3,000</strong>
+                      <p class="roi-time"><span data-roi-output="salesCount">1.2</span> <span data-roi-sales-description>additional won projects</span> / month on average</p>
                       <dl class="roi-totals">
-                        <div>
-                          <dt>Annual time value, before costs</dt>
-                          <dd data-roi-output="annualValue">$8,640</dd>
-                        </div>
-                        <div>
-                          <dt>Year-one net value</dt>
-                          <dd data-roi-output="netValue">—</dd>
-                        </div>
-                        <div>
-                          <dt>Year-one ROI</dt>
-                          <dd data-roi-output="roi">—</dd>
-                        </div>
+                        <div><dt>Annual revenue change</dt><dd data-roi-output="annualRevenue">$36,000</dd></div>
+                        <div><dt>Annual gross profit change, before project costs</dt><dd data-roi-output="annualProfit">$14,400</dd></div>
+                        <div><dt>Year-one net contribution</dt><dd data-roi-output="netValue">—</dd></div>
+                        <div><dt>Year-one ROI</dt><dd data-roi-output="roi">—</dd></div>
                       </dl>
-                      <p class="roi-status" data-roi-status>Enter both costs to see net value and ROI.</p>
+                      <p class="roi-status" data-roi-status>Enter both costs to see net contribution and ROI.</p>
                     </div>
                   </div>
-                  <p class="roi-equation" data-roi-equation>12 proposals × 60 minutes ÷ 60 × $60 per hour = $720 / month in time value.</p>
-                  <p class="roi-caveat">
-                    Time value represents capacity freed for other work. Cash savings depend on reducing actual spending. These examples assume the same monthly benefit for 12 months; actual results
-                    depend on adoption and your workflow.
-                  </p>
-                  <p class="roi-method">
-                    Year-one net value = annual time value − (12 × ongoing monthly cost + setup cost). ROI = net value ÷ those total costs × 100. Evaluate each workflow separately; count shared time
-                    savings and costs once.
-                  </p>
+                  <p class="roi-equation" data-roi-equation>12 proposals × (30% − 20%) × $2,500 per won project = $3,000 / month in added revenue.</p>
+                  <p class="roi-caveat">The 1.2 additional wins are a monthly average, not a fractional project sold. Count only signed, delivered work in your actual results. Actual results depend on demand, execution, and your sales process. The annual figures assume the same monthly change for 12 months.</p>
+                  <p class="roi-method">Gross profit change = revenue change × gross margin. Year-one net contribution = annual gross profit change − (12 × ongoing monthly cost + setup cost). ROI = net contribution ÷ those total costs × 100. The model assumes capacity for added sales without changing other overhead. Count shared costs once if you combine workflows.</p>
                   <noscript><p class="roi-field-note">Enable JavaScript to adjust this example and calculate ROI with your own costs.</p></noscript>
                 </section>
               </div>
@@ -458,7 +403,7 @@
                     <span class="case-category">Customer support · Retail &amp; online shops</span>
                     <span class="case-title">Answer the repeat questions. Focus on the exceptions.</span>
                     <span class="case-preview">For the shop where the same product and returns questions interrupt the day.</span>
-                    <span class="case-estimate"><span data-roi-preview-label>Projected ROI:</span>: <span data-roi-preview>$400</span> / month</span>
+                    <span class="case-estimate"><span data-roi-preview-label>Projected time value</span>: <span data-roi-preview>$400</span><span data-roi-preview-period> / month before costs</span></span>
                   </span>
                   <span class="case-toggle" aria-hidden="true"></span>
                 </h3>
@@ -593,9 +538,10 @@
                   <span class="case-number" aria-hidden="true">04</span>
                   <span class="case-heading-copy">
                     <span class="case-category">Marketing · Local businesses</span>
-                    <span class="case-title">Make a week of marketing from work you already did.</span>
-                    <span class="case-preview">For the business with good stories to share and no time to write them.</span>
-                    <span class="case-estimate"><span data-roi-preview-label>Projected ROI:</span>: <span data-roi-preview>$360</span> / month</span>
+                    <span class="case-title">Turn useful content into new customer inquiries.</span>
+                    <span class="case-preview">For the local business that wants a steadier flow of new customers.</span>
+                    <span class="case-estimate"><span data-roi-preview-label>Illustrative added revenue</span>: <span data-roi-preview>$1,500</span><span data-roi-preview-period> / month before project costs</span><span data-roi-preview-roi hidden> · Year-one ROI: <span data-roi-preview-roi-value>—</span></span></span>
+                  </span>
                   </span>
                   <span class="case-toggle" aria-hidden="true"></span>
                 </h3>
@@ -604,121 +550,88 @@
                 <div class="case-workflow">
                   <div>
                     <h4>The everyday problem</h4>
-                    <p>Great work happens every week, but the newsletter and social channels go quiet. Starting from a blank page keeps pushing marketing to the bottom of the list.</p>
+                    <p>Great work happens every week, but prospective customers rarely see it. The business has useful examples and customer questions to answer, yet its marketing goes quiet for weeks.</p>
                   </div>
                   <div>
                     <h4>A workflow with AI</h4>
                     <p>
-                      The owner shares a few notes, approved photos, and a useful customer question. AI drafts an email and three social posts in the business’s voice. The owner checks facts, adds a
-                      personal touch, and schedules them.
+                      The owner shares job examples, approved photos, and common customer questions. AI drafts a useful email, social posts, and a short website story, each with a clear path to inquire. The owner checks facts, adds a personal touch, and publishes them with trackable links.
                     </p>
                   </div>
                   <div class="case-benefit">
                     <h4>What could improve</h4>
-                    <p><strong>A more consistent presence with less writing time.</strong> Useful content drawn from the business’s own expertise gives customers a reason to stay in touch.</p>
+                    <p><strong>More qualified inquiries can become first purchases.</strong> Consistent, useful content helps nearby buyers discover the business and take a measurable next step.</p>
                   </div>
                 </div>
                 <div class="case-pilot">
-                  <p><strong>Start small</strong>Turn one completed job or customer question into a week of content.</p>
-                  <p><strong>Measure the change</strong>Content preparation time, publishing consistency, and inquiries.</p>
+                  <p><strong>Start small</strong>Publish one customer story and one helpful email with trackable inquiry links.</p>
+                  <p><strong>Measure the change</strong>Qualified inquiries attributable to the content, inquiry-to-sale rate, and first-sale revenue.</p>
                 </div>
 
-                <section class="case-roi" data-roi data-unit="batches" aria-labelledby="consistent-marketing-roi-title">
+                <section class="case-roi" data-roi data-roi-model="new-leads" data-unit="customers" aria-labelledby="consistent-marketing-roi-title">
                   <div class="roi-heading">
                     <div>
                       <p class="roi-kicker">Illustrative projection · USD</p>
-                      <h4 id="consistent-marketing-roi-title">What could this be worth to you?</h4>
+                      <h4 id="consistent-marketing-roi-title">What could more qualified inquiries add to sales?</h4>
                     </div>
                     <button class="roi-reset" type="button" hidden>Reset example</button>
                   </div>
-                  <p class="roi-intro">These sample assumptions are a starting point. Use time saved after reviewing and correcting AI’s work.</p>
+                  <p class="roi-intro">Model the sales impact of qualified inquiries your new marketing actually generates. The sample volume is illustrative, not a forecast.</p>
                   <div class="roi-layout">
                     <div class="roi-inputs">
                       <fieldset class="roi-assumptions" disabled>
-                        <legend>1. Adjust the time savings</legend>
-                        <div class="roi-fields roi-fields-three">
+                        <legend>1. Adjust the sales assumptions</legend>
+                        <div class="roi-fields roi-fields-revenue">
                           <div>
-                            <label for="consistent-marketing-volume">Content batches per month</label>
-                            <input id="consistent-marketing-volume" data-roi-input="volume" type="number" min="0" max="1000000" step="1" value="4" inputmode="numeric" />
+                            <label for="consistent-marketing-volume">Additional qualified inquiries per month</label>
+                            <input id="consistent-marketing-volume" data-roi-input="volume" type="number" min="0" max="1000000" step="1" value="20" inputmode="decimal" />
                           </div>
                           <div>
-                            <label for="consistent-marketing-minutes">Minutes saved per batch</label>
-                            <input id="consistent-marketing-minutes" data-roi-input="minutes" type="number" min="0" max="1440" step="0.1" value="120" inputmode="decimal" />
+                            <label for="consistent-marketing-closeRate">Inquiry-to-sale rate (%)</label>
+                            <input id="consistent-marketing-closeRate" data-roi-input="closeRate" type="number" min="0" max="100" step="0.01" value="25" inputmode="decimal" />
                           </div>
                           <div>
-                            <label for="consistent-marketing-rate">Value of one hour ($)</label>
-                            <input id="consistent-marketing-rate" data-roi-input="rate" type="number" min="0" max="100000" step="0.01" value="45" inputmode="decimal" />
+                            <label for="consistent-marketing-avgSale">Average first-sale revenue ($)</label>
+                            <input id="consistent-marketing-avgSale" data-roi-input="avgSale" type="number" min="0" max="1000000000" step="0.01" value="300" inputmode="decimal" />
+                          </div>
+                          <div>
+                            <label for="consistent-marketing-margin">Gross margin on added sales (%)</label>
+                            <input id="consistent-marketing-margin" data-roi-input="margin" type="number" min="0" max="100" step="0.01" value="45" inputmode="decimal" />
                           </div>
                         </div>
-                        <p class="roi-field-note">Use the value of the owner’s time or the employee’s total hourly cost.</p>
+                        <p class="roi-field-note">Use your actual conversion rates, sale value, and margin when available. Gross margin is the share of sales left after direct delivery costs.</p>
                       </fieldset>
                       <fieldset class="roi-costs" disabled>
                         <legend>2. Add your expected costs</legend>
                         <div class="roi-fields">
                           <div>
                             <label for="consistent-marketing-monthly-cost">Ongoing cost / month ($)</label>
-                            <input
-                              id="consistent-marketing-monthly-cost"
-                              data-roi-input="monthlyCost"
-                              type="number"
-                              min="0"
-                              max="1000000000"
-                              step="0.01"
-                              placeholder="Enter your estimate"
-                              inputmode="decimal"
-                              aria-describedby="consistent-marketing-cost-note"
-                            />
+                            <input id="consistent-marketing-monthly-cost" data-roi-input="monthlyCost" type="number" min="0" max="1000000000" step="0.01" placeholder="Enter your estimate" inputmode="decimal" aria-describedby="consistent-marketing-cost-note" />
                           </div>
                           <div>
                             <label for="consistent-marketing-setup-cost">One-time setup cost ($)</label>
-                            <input
-                              id="consistent-marketing-setup-cost"
-                              data-roi-input="setupCost"
-                              type="number"
-                              min="0"
-                              max="1000000000"
-                              step="0.01"
-                              placeholder="Enter your estimate"
-                              inputmode="decimal"
-                              aria-describedby="consistent-marketing-cost-note"
-                            />
+                            <input id="consistent-marketing-setup-cost" data-roi-input="setupCost" type="number" min="0" max="1000000000" step="0.01" placeholder="Enter your estimate" inputmode="decimal" aria-describedby="consistent-marketing-cost-note" />
                           </div>
                         </div>
-                        <p class="roi-field-note" id="consistent-marketing-cost-note">
-                          Include service and software fees, maintenance, and setup or training time. Enter 0 for a cost you do not expect. <a href="sign-up/">View service pricing ↗</a>
-                        </p>
+                        <p class="roi-field-note" id="consistent-marketing-cost-note">Include service, software, and other project costs. Enter 0 for a cost you do not expect. <a href="sign-up/">View service pricing ↗</a></p>
                       </fieldset>
                     </div>
                     <div class="roi-results" aria-live="polite" aria-atomic="true">
-                      <p class="roi-result-label">Potential monthly time value</p>
-                      <strong class="roi-monthly-value" data-roi-output="monthlyValue">$360</strong>
-                      <p class="roi-time"><span data-roi-output="hours">8</span> hours freed / month</p>
+                      <p class="roi-result-label">Projected monthly revenue change</p>
+                      <strong class="roi-monthly-value" data-roi-output="monthlyRevenue">$1,500</strong>
+                      <p class="roi-time"><span data-roi-output="salesCount">5</span> <span data-roi-sales-description>additional customers</span> / month on average</p>
                       <dl class="roi-totals">
-                        <div>
-                          <dt>Annual time value, before costs</dt>
-                          <dd data-roi-output="annualValue">$4,320</dd>
-                        </div>
-                        <div>
-                          <dt>Year-one net value</dt>
-                          <dd data-roi-output="netValue">—</dd>
-                        </div>
-                        <div>
-                          <dt>Year-one ROI</dt>
-                          <dd data-roi-output="roi">—</dd>
-                        </div>
+                        <div><dt>Annual revenue change</dt><dd data-roi-output="annualRevenue">$18,000</dd></div>
+                        <div><dt>Annual gross profit change, before project costs</dt><dd data-roi-output="annualProfit">$8,100</dd></div>
+                        <div><dt>Year-one net contribution</dt><dd data-roi-output="netValue">—</dd></div>
+                        <div><dt>Year-one ROI</dt><dd data-roi-output="roi">—</dd></div>
                       </dl>
-                      <p class="roi-status" data-roi-status>Enter both costs to see net value and ROI.</p>
+                      <p class="roi-status" data-roi-status>Enter both costs to see net contribution and ROI.</p>
                     </div>
                   </div>
-                  <p class="roi-equation" data-roi-equation>4 batches × 120 minutes ÷ 60 × $45 per hour = $360 / month in time value.</p>
-                  <p class="roi-caveat">
-                    Time value represents capacity freed for other work. Cash savings depend on reducing actual spending. These examples assume the same monthly benefit for 12 months; actual results
-                    depend on adoption and your workflow.
-                  </p>
-                  <p class="roi-method">
-                    Year-one net value = annual time value − (12 × ongoing monthly cost + setup cost). ROI = net value ÷ those total costs × 100. Evaluate each workflow separately; count shared time
-                    savings and costs once.
-                  </p>
+                  <p class="roi-equation" data-roi-equation>20 additional qualified inquiries × 25% inquiry-to-sale rate × $300 first sale = $1,500 / month in added revenue.</p>
+                  <p class="roi-caveat">Count inquiries attributable to this marketing using tagged links or a simple “How did you hear about us?” question. This model includes first purchases only, not repeat sales or lifetime value. Actual results depend on demand, execution, and your sales process. The annual figures assume the same monthly change for 12 months.</p>
+                  <p class="roi-method">Gross profit change = revenue change × gross margin. Year-one net contribution = annual gross profit change − (12 × ongoing monthly cost + setup cost). ROI = net contribution ÷ those total costs × 100. The model assumes capacity for added sales without changing other overhead. Count shared costs once if you combine workflows.</p>
                   <noscript><p class="roi-field-note">Enable JavaScript to adjust this example and calculate ROI with your own costs.</p></noscript>
                 </section>
               </div>
@@ -732,7 +645,7 @@
                     <span class="case-category">Reporting &amp; operations · Growing teams</span>
                     <span class="case-title">Start the week with a clear picture of the business.</span>
                     <span class="case-preview">For the owner piecing together sales, bookings, and unpaid invoices by hand.</span>
-                    <span class="case-estimate"><span data-roi-preview-label>Projected ROI:</span>: <span data-roi-preview>$360</span> / month</span>
+                    <span class="case-estimate"><span data-roi-preview-label>Projected time value</span>: <span data-roi-preview>$360</span><span data-roi-preview-period> / month before costs</span></span>
                   </span>
                   <span class="case-toggle" aria-hidden="true"></span>
                 </h3>
@@ -904,12 +817,12 @@
             <div class="form-field"><label for="inquiry-name">Your name</label><input id="inquiry-name" name="name" autocomplete="name" maxlength="120" required /></div>
             <div class="form-field"><label for="inquiry-email">Email address</label><input id="inquiry-email" name="email" type="email" autocomplete="email" maxlength="254" required /></div>
             <div class="form-field form-field-wide">
-              <label for="inquiry-interest">I’d like to learn about</label
-              ><select id="inquiry-interest" name="interest">
-                <option value="Help choosing an engagement">Not sure yet — help me get started</option>
-                <option value="AI Advisory — Steward Service">AI Advisory — Steward Service</option>
-                <option value="AI Team Program — Guild Service">AI Team Program — Guild Service</option>
-                <option value="AI Implementation — Butler Service">AI Implementation — Butler Service</option>
+              <label for="inquiry-team-size">How many people on your team are interested in doing more with AI?</label>
+              <select id="inquiry-team-size" name="team_size">
+                <option value="1">1</option>
+                <option value="2-5">2 - 5</option>
+                <option value="6-10">6 - 10</option>
+                <option value="10+">10+</option>
               </select>
             </div>
             <div class="form-field form-field-wide">
@@ -934,6 +847,6 @@
       <div class="footer-links"><a href="../index.html">Home</a><a href="../privacy/">Privacy</a></div>
     </footer>
     <script src="contact.js" defer></script>
-    <script src="case-studies.js?v=20261027-roi" defer></script>
+    <script src="case-studies.js?v=20261027-revenue" defer></script>
   </body>
 </html>

@@ -692,15 +692,18 @@ h2 {
   border-top: 1px solid #426074;
 }
 .roi-totals dt {
+  min-width: 0;
+  flex: 1;
   color: #bdd0de;
   font-size: 12px;
 }
 .roi-totals dd {
+  flex: 0 0 auto;
   margin: 0;
   font-size: 16px;
   font-weight: 500;
   text-align: right;
-  overflow-wrap: anywhere;
+  white-space: nowrap;
 }
 .roi-status {
   margin-top: 10px;
